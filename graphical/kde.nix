@@ -30,6 +30,7 @@ with lib;
     kdeApplications.kmail
     kdeApplications.ksystemlog
     kdeApplications.krfb
+    kdeApplications.okular
     kcachegrind
     ktorrent
     dragon

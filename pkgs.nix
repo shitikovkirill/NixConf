@@ -2,10 +2,16 @@
 
 {
     environment.systemPackages = with pkgs; [
-       firefox
-       atom
-       htop
-       zip
-       unzip
+      firefox
+      chromium
+      w3m
+
+      pass
+
+      htop
+      zip
+      unzip
+
+      lastpass-cli
     ];
 }

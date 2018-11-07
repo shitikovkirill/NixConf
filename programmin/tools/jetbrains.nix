@@ -4,6 +4,6 @@
    environment.systemPackages = with pkgs; [
      openjdk10
      jetbrains.jdk
-     jetbrains.pycharm-community
+     jetbrains.pycharm-professional
    ];
 }
