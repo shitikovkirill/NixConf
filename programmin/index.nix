@@ -13,5 +13,6 @@
      ./tools/ide.nix
      ./tools/js.nix
      ./tools/vagrant.nix
+     ./php.nix
    ];
 }

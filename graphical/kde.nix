@@ -38,4 +38,8 @@ with lib;
     # Graphical text editor
     kate
   ];
+
+  environment.interactiveShellInit = ''
+    alias kde_update='rm ~/.cache/ksycoca5_* -rf && kbuildsycoca5'
+  '';
 }

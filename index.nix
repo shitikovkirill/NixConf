@@ -13,4 +13,6 @@
   ./tools/zsh.nix
   ./programmin/index.nix
   ];
+
+  containers = import ./containers/index.nix;
 }
