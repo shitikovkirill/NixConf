@@ -6,6 +6,8 @@
       chromium
       w3m
 
+      scudcloud
+
       pass
 
       htop
