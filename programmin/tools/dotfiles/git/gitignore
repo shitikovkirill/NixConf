@@ -1,0 +1,6 @@
+.idea
+.vagrant
+access.log
+error.log
+id_rsa
+not_in_git*

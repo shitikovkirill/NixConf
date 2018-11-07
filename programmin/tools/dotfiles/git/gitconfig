@@ -1,0 +1,11 @@
+[user]
+	name = Shitikov Kirill
+	email = sh.kiruh@gmail.com
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+	editor = nano
+[color]
+	ui = true
+[alias]
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
