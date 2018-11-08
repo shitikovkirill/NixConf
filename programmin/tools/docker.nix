@@ -7,4 +7,7 @@
       python36Packages.docker_compose
       docker-machine
    ];
+
+   virtualisation.docker.enable = true;
+   users.users.kirill.extraGroups = [ "docker" ];
 }
