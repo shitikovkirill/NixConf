@@ -39,6 +39,7 @@ with lib;
     kate
   ];
 
+  # reload icons in kde
   environment.interactiveShellInit = ''
     alias kde_update='rm ~/.cache/ksycoca5_* -rf && kbuildsycoca5'
   '';

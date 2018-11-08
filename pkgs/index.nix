@@ -2,12 +2,6 @@
 
 {
     environment.systemPackages = with pkgs; [
-      firefox
-      chromium
-      w3m
-
-      scudcloud
-
       pass
 
       htop
@@ -15,5 +9,10 @@
       unzip
 
       lastpass-cli
+    ];
+
+    imports = [
+      ./social.nix
+      ./browser.nix
     ];
 }
