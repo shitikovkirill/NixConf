@@ -4,7 +4,6 @@
     isNormalUser = true;
     home = "/home/kirill";
     description = "Kirill Shitikov";
-    shell = pkgs.zsh;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     openssh.authorizedKeys.keys =
 [

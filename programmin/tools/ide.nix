@@ -8,7 +8,7 @@
      atom
    ];
 
-   imports = [
-     ./jetbrains.nix
-   ];
+   #imports = [
+   #  ./jetbrains.nix
+   #];
 }

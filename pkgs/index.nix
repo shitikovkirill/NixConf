@@ -2,17 +2,17 @@
 
 {
     environment.systemPackages = with pkgs; [
-      pass
-
       htop
       zip
       unzip
 
-      lastpass-cli
+      alsaTools
+      thunderbird
+      lsof
     ];
 
     imports = [
-      ./social.nix
+      #./social.nix
       ./browser.nix
     ];
 }
