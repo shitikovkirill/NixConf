@@ -8,6 +8,7 @@
   ./pkgs/index.nix
   ./graphical/kde.nix
   ./devises/audio.nix
+  ./devises/video.nix
   ./users.nix
   ./network.nix
   ./tools/zsh.nix
