@@ -2,10 +2,8 @@
 
 {
     environment.systemPackages = with pkgs; [
-       firefox
-       atom
-       htop
-       zip
-       unzip
+      firefox
+      chromium
+      w3m
     ];
 }

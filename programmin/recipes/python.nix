@@ -2,6 +2,9 @@
 
 {
    environment.systemPackages = with pkgs; [
-	       python36Packages.virtualenvwrapper
+   pythonFull
+   python36Packages.virtualenvwrapper
+   zest-releaser-python2
+   zest-releaser-python3
   ];
 }
