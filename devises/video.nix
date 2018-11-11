@@ -5,5 +5,6 @@
    [
       vokoscreen
       vlc
+      youtube-dl
    ];
 }
