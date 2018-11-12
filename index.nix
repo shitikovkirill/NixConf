@@ -15,7 +15,7 @@
   ./programmin/index.nix
   ];
 
-  containers = import ./containers/index.nix;
+  #containers = import ./containers/index.nix;
 
   environment.interactiveShellInit = ''
     alias clear_nixp='sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old && nix-collect-garbage -d && sudo nix-collect-garbage -d'
