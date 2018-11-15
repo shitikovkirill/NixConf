@@ -35,6 +35,7 @@ with lib;
     ktorrent
     dragon
     filelight
+    kdeconnect
     # Graphical text editor
     kate
   ];
