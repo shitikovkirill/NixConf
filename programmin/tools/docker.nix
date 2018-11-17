@@ -16,6 +16,7 @@
   services.kubernetes = {
     roles = ["master" "node"];
     kubeconfig.server = "http://0.0.0.0:8080";
+    kubelet.extraOpts = "--fail-swap-on=false";
   };
 
   networking.firewall.allowedTCPPorts = [
