@@ -5,10 +5,6 @@
    nixpkgs.config.allowUnfree = true;
 
    environment.systemPackages = with pkgs; [
-     atom
+     micro
    ];
-
-   #imports = [
-   #  ./jetbrains.nix
-   #];
 }

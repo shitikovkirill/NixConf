@@ -9,7 +9,7 @@
 
    imports = [
      ./tools/git.nix
-     #./tools/docker.nix
+     ./tools/docker.nix
      ./tools/ide.nix
      #./tools/js.nix
      #./tools/vagrant.nix

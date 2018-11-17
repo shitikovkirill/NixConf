@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    gitg
     git
     gitAndTools.gitFull
   ];

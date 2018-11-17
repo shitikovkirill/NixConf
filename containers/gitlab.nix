@@ -28,8 +28,8 @@
     https = false;
     host = "git.example.com";
     port = 80;
-    user = "git";
-    group = "git";
+    user = "gitlab";
+    group = "gitlab";
     smtp = {
       enable = true;
       address = "localhost";
@@ -83,5 +83,10 @@
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql100;
+  };
+
+  services.redis = { 
+    enable = true;
+    vmOverCommit = true;
   };
 }
