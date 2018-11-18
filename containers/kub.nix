@@ -4,10 +4,13 @@
   environment.systemPackages = with pkgs;
   [
     docker
-    python36Packages.docker_compose
-    docker-machine
+    kubectl
   ];
 
   virtualisation.docker.enable = true;
-  users.users.kirill.extraGroups = [ "docker" ];
+
+  services.kubernetes = {
+    roles = ["master" "node"];
+    kubelet.extraOpts = "--fail-swap-on=false";
+  };
  }
