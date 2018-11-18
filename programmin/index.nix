@@ -13,6 +13,8 @@
      ./tools/ide.nix
      ./tools/js.nix
      ./tools/vagrant.nix
+     ./tools/python.nix
+     ./python.nix
      ./php.nix
    ];
 }
