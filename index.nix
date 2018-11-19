@@ -1,5 +1,8 @@
 {pkgs, prefix, ... }:
-
+let
+  secrets = import ./load-secrets.nix;
+  shared = import ./shared.nix;
+in
 {
   time.timeZone = "Europe/Kiev";
   nixpkgs.config.allowUnfree = true;

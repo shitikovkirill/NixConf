@@ -17,6 +17,8 @@ with lib;
 
     # Enable touchpad support for many laptops.
     synaptics.enable = true;
+
+    videoDrivers = [  "intel" "nvidia" ];
   };
 
   environment.systemPackages = with pkgs; [

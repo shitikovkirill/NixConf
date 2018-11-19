@@ -10,4 +10,9 @@
 
   virtualisation.docker.enable = true;
   users.users.kirill.extraGroups = [ "docker" ];
+
+  environment.interactiveShellInit = ''
+    alias drcont='docker rm $(docker ps -a -q)'
+    alias drimage='docker rmi $(docker images -q)'
+  '';
  }
