@@ -1,1 +1,1 @@
-if builtins.pathExists ./local-containers.nix then import ./local-containers.nix else {}
+if builtins.pathExists ./local/containers.nix then import ./local/containers.nix else {}
