@@ -1,4 +1,9 @@
+let
+  localcontainers = import ./load-containers.nix;
+in
 {
-  #gitlab = ({ config = import ./gitlab.nix; }) // { autoStart=true; };
-  kub = { config = import ./kub.nix; };
+  containers = ({
+    #gitlab = ({ config = import ./gitlab.nix; autoStart=true; });
+    kub = { config = import ./kub.nix; };
+  }) // localcontainers;
 }
