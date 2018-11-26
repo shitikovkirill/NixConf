@@ -14,5 +14,6 @@
   environment.interactiveShellInit = ''
     alias drcont='docker rm $(docker ps -a -q)'
     alias drimage='docker rmi $(docker images -q)'
+    alias drvolume='docker volume rm $(docker volume ls -q --filter dangling=true)'
   '';
  }

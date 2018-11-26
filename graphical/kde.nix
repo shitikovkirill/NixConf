@@ -33,6 +33,7 @@ with lib;
     kdeApplications.ksystemlog
     kdeApplications.krfb
     kdeApplications.okular
+    kdeApplications.spectacle
     kcachegrind
     ktorrent
     dragon
