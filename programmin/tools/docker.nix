@@ -6,6 +6,8 @@
     docker
     python36Packages.docker_compose
     docker-machine
+    google-cloud-sdk
+    kubectl
   ];
 
   virtualisation.docker.enable = true;
@@ -15,5 +17,6 @@
     alias drcont='docker rm $(docker ps -a -q)'
     alias drimage='docker rmi $(docker images -q)'
     alias drvolume='docker volume rm $(docker volume ls -q --filter dangling=true)'
+    alias dcstop='docker stop $(docker ps -aq)'
   '';
  }
