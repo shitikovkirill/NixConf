@@ -13,4 +13,8 @@
 
      nodePackages.node2nix
    ];
+
+   home-manager.users.kirill = {
+     home.file.".npmrc".source = ./dotfiles/npm/npmrc;
+   };
 }
