@@ -6,8 +6,11 @@
     docker
     python36Packages.docker_compose
     docker-machine
-    google-cloud-sdk
+
     kubectl
+
+    google-cloud-sdk
+    awscli
   ];
 
   virtualisation.docker.enable = true;
