@@ -6,6 +6,7 @@
     docker
     python36Packages.docker_compose
     awscli
+    git
   ];
 
   virtualisation.docker.enable = true;
@@ -17,7 +18,7 @@
     enable = true;
     user = "root";
     extraGroups = [ "wheel" "docker" ];
-    packages = [ pkgs.docker pkgs.python36Packages.docker_compose pkgs.awscli ];
+    packages = [ pkgs.docker pkgs.python36Packages.docker_compose pkgs.awscli pkgs.git ];
     port = 80;
   };
  }
