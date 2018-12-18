@@ -17,6 +17,7 @@ in
   ./devises/audio.nix
   ./devises/video.nix
   ./tools/zsh.nix
+  ./tools/translate.nix
   ./programmin/index.nix
   ./containers/index.nix
   ];
