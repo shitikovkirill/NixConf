@@ -4,5 +4,7 @@
    environment.systemPackages = with pkgs;
    [
      poedit
+
+     gettext
    ];
 }
