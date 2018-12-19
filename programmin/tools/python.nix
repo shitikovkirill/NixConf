@@ -6,6 +6,6 @@
 
       pypi2nix
 
-      python36Packages.pylint
+      # python36Packages.pylint
    ];
 }

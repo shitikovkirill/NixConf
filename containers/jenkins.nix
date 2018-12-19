@@ -33,9 +33,12 @@
       listenAddress="localhost";
       user = "root";
       extraGroups = [ "wheel" "docker" ];
-      packages = with pkgs;
-        [
+      packages = with pkgs; 
+        [ 
+
         git
+        gnumake
+
         docker
         python36Packages.docker_compose
         docker-machine
@@ -43,7 +46,7 @@
         kubectl
 
         google-cloud-sdk
-        awscli
+        awscli 
         ];
     };
   };
@@ -61,7 +64,12 @@
 
   environment.systemPackages = with pkgs;
   [
+    php
+    php72Packages.composer
+
+    gnumake
     git
+
     docker
     python36Packages.docker_compose
     docker-machine
@@ -70,8 +78,9 @@
 
     google-cloud-sdk
     awscli
-    gnumake
   ];
+
+  environment.variables.PATH = "~/.config/composer/vendor/bin/:$PATH";
 
   #security.acme.certs = {
   #  "ec2-35-159-10-125.eu-central-1.compute.amazonaws.com".email = "sh.kiruh@gmail.com";
