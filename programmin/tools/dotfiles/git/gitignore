@@ -1,5 +1,6 @@
 .idea
 .vagrant
+.directory
 access.log
 error.log
 id_rsa
