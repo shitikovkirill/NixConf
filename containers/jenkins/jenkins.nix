@@ -1,40 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
-
   services = {
-    nginx= {
-      enable = true;
-
-      recommendedGzipSettings = true;
-      recommendedOptimisation = true;
-      recommendedProxySettings = true;
-      recommendedTlsSettings = false;
-
-      virtualHosts = let
-        base = locations: {
-          inherit locations;
-
-          forceSSL = false;
-          enableACME = false;
-        };
-        proxy = port: base {
-          "/".proxyPass = "http://127.0.0.1:" + toString(port) + "/";
-        };
-      in {
-        "ec2-35-159-10-125.eu-central-1.compute.amazonaws.com" = proxy 8080 // { default = true; };
-      };
-    };
-
     jenkins = {
       enable = true;
       listenAddress="localhost";
       user = "root";
       extraGroups = [ "wheel" "docker" ];
-      packages = with pkgs; 
-        [ 
+      packages = with pkgs;
+        [
+        wget
 
         git
         gnumake
@@ -46,7 +21,7 @@
         kubectl
 
         google-cloud-sdk
-        awscli 
+        awscli
         ];
     };
   };
@@ -64,6 +39,7 @@
 
   environment.systemPackages = with pkgs;
   [
+    wget
     php
     php72Packages.composer
 
@@ -82,7 +58,4 @@
 
   environment.variables.PATH = "~/.config/composer/vendor/bin/:$PATH";
 
-  #security.acme.certs = {
-  #  "ec2-35-159-10-125.eu-central-1.compute.amazonaws.com".email = "sh.kiruh@gmail.com";
-  #};
  }

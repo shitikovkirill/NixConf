@@ -10,7 +10,7 @@ in
     #  privateNetwork = false;
     #  hostAddress = "192.168.100.100";
     #  localAddress = "192.168.100.120";
-    #  config = import ./jenkins.nix;
+    #  config = import ./jenkins/jenkins.nix;
     #};
   }) // localcontainers;
 }
