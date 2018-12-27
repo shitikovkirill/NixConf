@@ -29,13 +29,13 @@
 
   virtualisation.docker.enable = true;
 
-  environment.interactiveShellInit = ''
-    alias drcont='docker rm $(docker ps -a -q)'
-    alias drimage='docker rmi $(docker images -q)'
-    alias drvolume='docker volume rm $(docker volume ls -q --filter dangling=true)'
-    alias dcstop='docker stop $(docker ps -aq)'
-    alias clear_nixp='sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old && nix-collect-garbage -d && sudo nix-collect-garbage -d'
-  '';
+  programs.bash.shellAliases = {
+    drcont   = "docker rm $(docker ps -a -q)";
+    drimage  = "docker rmi $(docker images -q)";
+    drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
+    dcstop   = "docker stop $(docker ps -aq)";
+    clear_nixp = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old && nix-collect-garbage -d && sudo nix-collect-garbage -d";
+  };
 
   environment.systemPackages = with pkgs;
   [

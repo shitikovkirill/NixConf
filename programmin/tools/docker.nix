@@ -16,10 +16,10 @@
   virtualisation.docker.enable = true;
   users.users.kirill.extraGroups = [ "docker" ];
 
-  environment.interactiveShellInit = ''
-    alias drcont='docker rm $(docker ps -a -q)'
-    alias drimage='docker rmi $(docker images -q)'
-    alias drvolume='docker volume rm $(docker volume ls -q --filter dangling=true)'
-    alias dcstop='docker stop $(docker ps -aq)'
-  '';
+  programs.bash.shellAliases = {
+    drcont   = "docker rm $(docker ps -a -q)";
+    drimage  = "docker rmi $(docker images -q)";
+    drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
+    dcstop   = "docker stop $(docker ps -aq)";
+  };
  }

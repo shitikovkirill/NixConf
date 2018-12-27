@@ -1,6 +1,6 @@
 let
-  secrets = import ./load-secrets.nix;
-  shared = import ./shared.nix;
+  secrets = import ../load-secrets.nix;
+  shared = import ../shared.nix;
 in
 {
   environment.variables = {

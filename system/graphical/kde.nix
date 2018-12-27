@@ -44,7 +44,7 @@ with lib;
   ];
 
   # reload icons in kde
-  environment.interactiveShellInit = ''
-    alias kde_update='rm ~/.cache/ksycoca5_* -rf && kbuildsycoca5'
-  '';
+  programs.bash.shellAliases = {
+    kde_update = "rm ~/.cache/ksycoca5_* -rf && kbuildsycoca5";
+  };
 }
