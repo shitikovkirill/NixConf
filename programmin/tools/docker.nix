@@ -20,5 +20,11 @@
    networking.firewall.allowedTCPPorts = [ 
         8080
    ];
-
+   
+   programs.bash.shellAliases = {
+     drcont   = "docker rm $(docker ps -a -q)";
+     drimage  = "docker rmi $(docker images -q)";
+     drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
+     dcstop   = "docker stop $(docker ps -aq)";
+   };
 }
