@@ -8,5 +8,6 @@
   ./pkgs/index.nix
   ./system/index.nix
   ./programmin/index.nix
+  ./devises/index.nix
   ];
 }
