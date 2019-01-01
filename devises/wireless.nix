@@ -5,8 +5,8 @@
         userControlled.enable = true;
         interfaces = [ "wlp2s0" ];
         networks = {
-            TP-LINK_folnet = {
-                psk="23072011";
+            TP-LINK_370DEA = {
+                psk="24072011";
             };
         };
     };
