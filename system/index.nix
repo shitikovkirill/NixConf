@@ -2,8 +2,8 @@
 
 {
   imports = [
-  ./system/users.nix
-  ./system/network.nix
-  ./system/aliases.nix
+  ./users.nix
+  ./network.nix
+  ./aliases.nix
   ];
 }
