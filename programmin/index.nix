@@ -14,6 +14,7 @@
      ./tools/js.nix
      ./tools/vagrant.nix
      ./tools/python.nix
+     ./tools/bash.nix
      ./python.nix
      ./php.nix
    ];

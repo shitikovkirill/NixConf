@@ -21,5 +21,6 @@
     drimage  = "docker rmi $(docker images -q)";
     drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
     dcstop   = "docker stop $(docker ps -aq)";
+    dlint    = "docker run --rm -i hadolint/hadolint";
   };
  }
