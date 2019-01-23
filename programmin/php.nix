@@ -8,6 +8,6 @@
    ];
 
    environment.etc."php.d/php.ini".text = ''
-     memory_limit = 2000M
+     memory_limit = -1
    '';
 }
