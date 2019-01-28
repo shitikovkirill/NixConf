@@ -8,7 +8,7 @@
       default = "xfce";
     };
     displayManager.auto = {
-      enable = true;
+      enable = false;
       user = "kirill";
     };
   };

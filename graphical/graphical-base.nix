@@ -13,10 +13,4 @@ with lib;
   # KDE complains if power management is disabled (to be precise, if
   # there is no power management backend such as upower).
   powerManagement.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    vim
-    firefox
-  ];
-
 }
