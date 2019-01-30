@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs;
   [
     docker
+    #ctop
     python36Packages.docker_compose
     docker-machine
 
@@ -21,6 +22,7 @@
     drimage  = "docker rmi $(docker images -q)";
     drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
     dcstop   = "docker stop $(docker ps -aq)";
+    dhist    = "docker history --no-trunc";
     dlint    = "docker run --rm -i hadolint/hadolint";
     dlint-deb = "docker run -v $(pwd):/app:ro --workdir=/app --rm -i hadolint/hadolint:latest-debian hadolint";
   };

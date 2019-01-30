@@ -9,6 +9,8 @@
       unzip
 
       lastpass-cli
+      
+      youtube-dl
     ];
 
     imports = [
