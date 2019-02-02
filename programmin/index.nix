@@ -11,6 +11,7 @@
      ./tools/git.nix
      ./tools/docker.nix
      ./tools/ide.nix
+     ./tools/jenkins.nix
      #./tools/js.nix
      #./tools/vagrant.nix
      #./php.nix
