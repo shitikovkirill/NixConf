@@ -9,5 +9,6 @@
   ./system/index.nix
   ./programmin/index.nix
   ./devises/index.nix
+  ./nginx/index.nix
   ];
 }

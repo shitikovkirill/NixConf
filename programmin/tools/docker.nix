@@ -13,8 +13,8 @@
    users.users.kirill.extraGroups = [ "docker" ];
 
    services.kubernetes = {
+     verbose = true;
      roles = ["master" "node"];
-     kubeconfig.server = "http://0.0.0.0:8080";
    };
 
    networking.firewall.allowedTCPPorts = [ 

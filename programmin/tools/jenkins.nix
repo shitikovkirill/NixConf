@@ -5,7 +5,6 @@
     jenkins = {
       enable = true;
       port = 8888;
-      listenAddress="0.0.0.0";
       user = "root";
       extraGroups = [ "wheel" "docker" ];
       packages = with pkgs; 
@@ -26,17 +25,6 @@
         ];
     };
   };
-
-
-  virtualisation.docker.enable = true;
-
-  environment.interactiveShellInit = ''
-    alias drcont='docker rm $(docker ps -a -q)'
-    alias drimage='docker rmi $(docker images -q)'
-    alias drvolume='docker volume rm $(docker volume ls -q --filter dangling=true)'
-    alias dcstop='docker stop $(docker ps -aq)'
-    alias clear_nixp='sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old && nix-collect-garbage -d && sudo nix-collect-garbage -d'
-  '';
 
   environment.systemPackages = with pkgs;
   [
