@@ -4,22 +4,11 @@
    environment.systemPackages = with pkgs;
    [
       docker
-      python36Packages.docker_compose
-      
-      kubectl
+      python36Packages.docker_compose      
    ];
 
    virtualisation.docker.enable = true;
    users.users.kirill.extraGroups = [ "docker" ];
-
-   services.kubernetes = {
-     verbose = true;
-     roles = ["master" "node"];
-   };
-
-   networking.firewall.allowedTCPPorts = [ 
-        8080
-   ];
    
    programs.bash.shellAliases = {
      drcont   = "docker rm $(docker ps -a -q)";
