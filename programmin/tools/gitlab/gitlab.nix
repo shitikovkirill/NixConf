@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  gsecrets = import ./gitlab-secrets.nix;
+in
 {
   environment.systemPackages = with pkgs; [
     gitlab
@@ -18,8 +20,12 @@
     group = "git";
     smtp = {
       enable = true;
-      address = "localhost";
-      port = 25;
+      authentication = "login";
+      address = "smtp.gmail.com";
+      domain = "smtp.gmail.com";
+      port = 587;
+      username = gsecrets.smtp_username;
+      password = gsecrets.smtp_password;
     };
 
     secrets = {
@@ -62,6 +68,10 @@
           email_display_name = "Example GitLab";
           email_reply_to = "gitlab-no-reply@example.com";
           default_projects_features = { builds = false; };
+        };
+        registry = {
+          enabled = true;
+          api_url="http://localhost:5000";
         };
       };
     };

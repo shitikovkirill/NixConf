@@ -9,8 +9,8 @@
 
    imports = [
      ./tools/git.nix
-     ./tools/gitlab.nix
-     ./tools/docker.nix
+     ./tools/gitlab/gitlab.nix
+     ./tools/docker/docker.nix
      ./tools/ide.nix
      ./tools/jenkins.nix
      #./tools/js.nix

@@ -4,12 +4,18 @@
    environment.systemPackages = with pkgs;
    [
       docker
-      python36Packages.docker_compose      
+      python36Packages.docker_compose
    ];
 
    virtualisation.docker.enable = true;
    users.users.kirill.extraGroups = [ "docker" ];
-   
+
+   services.dockerRegistry = {
+     enable = true;
+     enableGarbageCollect = true;
+     enableRedisCache = false;
+   };   
+
    programs.bash.shellAliases = {
      drcont   = "docker rm $(docker ps -a -q)";
      drimage  = "docker rmi $(docker images -q)";
