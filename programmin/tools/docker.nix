@@ -27,5 +27,9 @@
     dhist      = "docker history --no-trunc";
     dlint      = "docker run --rm -i hadolint/hadolint";
     dlint-deb  = "docker run -v $(pwd):/app:ro --workdir=/app --rm -i hadolint/hadolint:latest-debian hadolint";
+    
+    mk_start   = "sudo minikube start";
+    mk_con     = "eval $(sudo minikube docker-env)";
+
   };
  }
