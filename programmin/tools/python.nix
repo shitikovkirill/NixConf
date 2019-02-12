@@ -6,6 +6,6 @@
 
       pypi2nix
 
-      nixos.python36Packages.virtualenv
+      python36Packages.virtualenv
    ];
 }
