@@ -8,6 +8,7 @@
     python36Packages.docker_compose
     docker-machine
 
+    minikube
     kubectl
 
     google-cloud-sdk
