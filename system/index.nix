@@ -1,5 +1,6 @@
 {
   imports = [
+  ./sudoers.nix
   ./users.nix
   ./envvar.nix
   ./aliases.nix
