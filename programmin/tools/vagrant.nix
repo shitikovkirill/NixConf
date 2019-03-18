@@ -16,4 +16,14 @@
   services.nfs.server.enable = true;
   # !!! This is "unsafe", ports needed should be found and fixed here.
   networking.firewall.enable = false;
+
+  security.sudo.extraRules = [
+    {
+      groups = [ "users" "wheel" ];
+      runAs = "root";
+      commands = [
+        { command = "${pkgs.vagrant}/bin/vagrant"; options = [ "SETENV" "NOPASSWD" ]; }
+      ];
+    }
+  ];
 }
