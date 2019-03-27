@@ -1,6 +1,8 @@
 [user]
 	name = Shitikov Kirill
 	email = sh.kiruh@gmail.com
+[credential]
+    helper = cache --timeout=3600
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
