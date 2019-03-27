@@ -8,10 +8,12 @@
 [color]
 	ui = true
 [alias]
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	unstage = reset HEAD --
-	last = log -1 HEAD
 	co = checkout
 	br = branch
 	ci = commit
 	st = status
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	cola = !git-dag -r .
+	gitg = !gitg
