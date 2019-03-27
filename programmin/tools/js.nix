@@ -10,6 +10,8 @@
      phantomjs2
 
      yarn
+     
+     ws
 
      nodePackages.node2nix
    ];

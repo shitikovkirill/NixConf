@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     gitg
+    git-cola
     git
     gitAndTools.gitFull
   ];
