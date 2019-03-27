@@ -19,3 +19,4 @@
 	last = log -1 HEAD
 	target = git log --oneline --decorate
 	gitg = !gitg
+	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
