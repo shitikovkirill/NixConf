@@ -10,9 +10,9 @@
 [color]
 	ui = true
 [alias]
-	co = checkout
+	ct = checkout
 	br = branch
-	ci = commit
+	co = commit
 	st = status
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 	unstage = reset HEAD --
