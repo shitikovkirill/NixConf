@@ -15,4 +15,5 @@
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	target = git log --oneline --decorate
 	gitg = !gitg
