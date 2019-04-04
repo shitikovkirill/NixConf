@@ -20,3 +20,6 @@
 	target = git log --oneline --decorate
 	gitg = !gitg
 	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+	sdiff = '!'"git diff && git submodule foreach 'git diff'"
+	spush = "push --recurse-submodules=on-demand"
+	supdate = "submodule update --remoute --merge"
