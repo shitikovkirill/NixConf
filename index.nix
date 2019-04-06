@@ -8,7 +8,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-  "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos"
+  "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/release-18.09.tar.gz}/nixos"
   ./system/index.nix
   ./pkgs/index.nix
   ./tools/zsh.nix
