@@ -2,4 +2,5 @@ recipes
 .directory
 secrets.nix
 containers/local
-! containers/local/containers.nix.example
+!containers/local/containers.nix.example
+system/local
