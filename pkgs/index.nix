@@ -11,6 +11,8 @@
       lastpass-cli
       
       youtube-dl
+      
+      anydesk
     ];
 
     imports = [
