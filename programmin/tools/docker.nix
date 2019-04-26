@@ -10,6 +10,7 @@
 
     minikube
     kubectl
+    helm
 
     google-cloud-sdk
     awscli
