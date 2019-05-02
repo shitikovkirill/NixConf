@@ -23,6 +23,7 @@
     drcont     = "docker rm $(docker ps -a -q)";
     drimage    = "docker rmi $(docker images -q)";
     drvolume   = "docker volume rm $(docker volume ls -q --filter dangling=true)";
+    drnetwork  = "docker network prune";
     dcstop     = "docker stop $(docker ps -aq)";
     dnorestart = "docker update --restart=no $(docker ps -aq)";
     dhist      = "docker history --no-trunc";
