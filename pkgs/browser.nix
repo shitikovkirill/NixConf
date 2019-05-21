@@ -5,5 +5,6 @@
       firefox
       chromium
       w3m
+      filezilla
     ];
 }
