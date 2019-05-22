@@ -18,5 +18,6 @@
     imports = [
       ./social.nix
       ./browser.nix
+      ./office.nix
     ];
 }
