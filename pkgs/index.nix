@@ -17,6 +17,8 @@
       keeweb
       openlogviewer
       stacker
+      dockstation
+      composercat
     ];
 
     imports = [
@@ -29,5 +31,7 @@
         keeweb = pkgs.callPackage ./custom/KeeWeb {};
         openlogviewer = pkgs.callPackage ./custom/Logger {};
         stacker = pkgs.callPackage ./custom/Stacker {};
+        dockstation = pkgs.callPackage ./custom/DockStation {};
+        composercat = pkgs.callPackage ./custom/Composercat {};
     };
 }

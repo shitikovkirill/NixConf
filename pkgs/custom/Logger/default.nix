@@ -58,9 +58,6 @@ in stdenv.mkDerivation rec {
     ];
 
     fixupPhase = ''
-      echo ${rpath}
-      ls $out/opt/open-log-viewer/open-log-viewer
-
       patchelf \
       --set-interpreter "${dynamic-linker}" \
       --set-rpath "${rpath}" \

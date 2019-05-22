@@ -59,9 +59,6 @@ in pkgs.stdenv.mkDerivation rec {
   ];
 
   fixupPhase = ''
-    echo ${rpath}
-    ls ${targetPath}/opt/stacker/stacker
-
     patchelf \
     --set-interpreter "${dynamic-linker}" \
     --set-rpath "${rpath}" \
