@@ -13,6 +13,8 @@
       youtube-dl
       
       anydesk
+      
+      keeweb
     ];
 
     imports = [
@@ -20,4 +22,8 @@
       ./browser.nix
       ./office.nix
     ];
+    
+    nixpkgs.config.packageOverrides = super: {
+       keeweb = pkgs.callPackage ./custom/KeeWeb {};
+    };
 }
