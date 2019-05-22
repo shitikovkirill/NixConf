@@ -9,12 +9,14 @@
       unzip
 
       lastpass-cli
-      
+
       youtube-dl
-      
+
       anydesk
-      
+
       keeweb
+      openlogviewer
+      stacker
     ];
 
     imports = [
@@ -22,8 +24,10 @@
       ./browser.nix
       ./office.nix
     ];
-    
+
     nixpkgs.config.packageOverrides = super: {
-       keeweb = pkgs.callPackage ./custom/KeeWeb {};
+        keeweb = pkgs.callPackage ./custom/KeeWeb {};
+        openlogviewer = pkgs.callPackage ./custom/Logger {};
+        stacker = pkgs.callPackage ./custom/Stacker {};
     };
 }
