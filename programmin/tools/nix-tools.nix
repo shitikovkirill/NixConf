@@ -6,6 +6,7 @@
    environment.systemPackages = with pkgs; [
       nox
       nix-info
+      nix-index
 
       (pkgs.vim_configurable.customize {
         name = "vim";
