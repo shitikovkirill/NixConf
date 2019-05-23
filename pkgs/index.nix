@@ -21,6 +21,7 @@
       composercat
       graphqlplayground
       snipline
+      snippetstore
     ];
 
     imports = [
@@ -37,5 +38,6 @@
         composercat = pkgs.callPackage ./custom/Composercat {};
         graphqlplayground = pkgs.callPackage ./custom/GraphQLPlayground {};
         snipline = pkgs.callPackage ./custom/Snipline {};
+        snippetstore = pkgs.callPackage ./custom/SnippetStore {};
     };
 }
