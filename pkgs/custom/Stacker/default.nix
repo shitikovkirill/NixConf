@@ -14,7 +14,7 @@ let
     icon = appName;
     comment = description;
     desktopName = "Stacker";
-    categories = "Office";
+    categories = "Development";
   };
 
 in pkgs.stdenv.mkDerivation rec {

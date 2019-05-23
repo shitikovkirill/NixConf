@@ -4,46 +4,44 @@
 let
   stdenv = pkgs.stdenv;
   dpkg = pkgs.dpkg;
-  dynamic-linker = pkgs.stdenv.cc.bintools.dynamicLinker;
+  dynamic-linker = stdenv.cc.bintools.dynamicLinker;
 
-  appName = "dockstation";
-  description = "DockStation is developer-centric application to managing projects based on Docker.";
+  appName = "snipline";
+  description = "Store your complex commands with dynamic parameters for easy retrieval with a fast workflow in mind.";
   desktopItem = pkgs.makeDesktopItem {
     name = appName;
     exec = appName;
     icon = appName;
     comment = description;
-    desktopName = "DockStation";
+    desktopName = "Snipline";
     categories = "Development";
   };
-in pkgs.stdenv.mkDerivation rec {
+in stdenv.mkDerivation rec {
   name = appName;
 
   src = pkgs.fetchurl {
-    url = "https://github.com/DockStation/dockstation/releases/download/v1.5.1/dockstation_1.5.1_amd64.deb";
-    sha256 = "09pj1sjr6djh5fccak41jk8lia96b18r85cpqf39gbyfdxx0bg5b";
+    url = "https://desktop.downloads.snipline.io/download/0.7.0/linux_64/snipline_0.7.0_amd64.deb";
+    sha256 = "13l2yg3429yqf6rcs7vhww84z3g9lwfair8mxl3a04lfmhk4l4ig";
   };
 
   icon = pkgs.fetchurl {
-    url = "https://dockstation.io/images/video_preview.png";
-    sha256 = "03092xiw0ka3zafkgdwz2vslmmb06xps3g4n47sg1gj19lnbdimp";
+    url = "https://app.snipline.io/images/snipline-inverted-logo.svg";
+    sha256 = "10vfxx0qyvm00kb3ajfi42s0xa3xdj9vsl55vzk3wl0byqj0ls8q";
   };
 
   phases = "unpackPhase fixupPhase";
 
-  targetPath = "$out";
-
   unpackPhase = ''
-    mkdir -p ${targetPath}
-    ${dpkg}/bin/dpkg -x $src ${targetPath}
+    mkdir -p $out
+    ${dpkg}/bin/dpkg -x $src $out
 
     mkdir -p $out/share/{applications,icons/hicolor/scalable/apps}
-    ln -s $icon $out/share/icons/hicolor/scalable/apps/${appName}.png
+    ln -s $icon $out/share/icons/hicolor/scalable/apps/${appName}.svg
     cp ${desktopItem}/share/applications/* $out/share/applications
   '';
 
   packages = with pkgs; [
-    at-spi2-atk utillinux
+    at-spi2-atk
   ];
 
   libPathNative = with pkgs; lib.makeLibraryPath packages;
@@ -52,23 +50,25 @@ in pkgs.stdenv.mkDerivation rec {
 
   rpath = with pkgs; lib.concatStringsSep ":" [
     atomEnv.libPath
-    "${targetPath}/opt/DockStation/"
+    "$out/usr/lib/snipline/"
     libPath
   ];
 
   fixupPhase = ''
+    ls -la $out/usr/bin/snipline
+
     patchelf \
     --set-interpreter "${dynamic-linker}" \
     --set-rpath "${rpath}" \
-    ${targetPath}/opt/DockStation/dockstation
+    $out/usr/bin/snipline
 
     mkdir -p $out/bin
-    ln -s ${targetPath}/opt/DockStation/dockstation $out/bin/dockstation
+    ln -s $out/usr/bin/snipline $out/bin/${appName}
   '';
 
   meta = with stdenv.lib; {
     inherit description;
-    homepage = https://dockstation.io/;
+    homepage = https://github.com/prisma/graphql-playground;
     license = licenses.agpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ shitikovkirill ];

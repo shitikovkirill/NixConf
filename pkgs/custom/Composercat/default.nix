@@ -14,7 +14,7 @@ let
     icon = appName;
     comment = description;
     desktopName = "Сomposercat";
-    categories = "Office";
+    categories = "Development";
   };
 in pkgs.stdenv.mkDerivation rec {
   name = appName;
