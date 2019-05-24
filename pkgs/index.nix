@@ -14,14 +14,7 @@
 
       anydesk
 
-      keeweb
-      #openlogviewer
-      stacker
-      dockstation
-      composercat
-      graphqlplayground
-      snipline
-      snippetstore
+    
     ];
 
     imports = [

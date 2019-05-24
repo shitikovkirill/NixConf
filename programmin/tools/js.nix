@@ -2,15 +2,15 @@
 
 {
    environment.systemPackages = with pkgs; [
-     lessc
-     sass
+     #lessc
+     #sass
 
      nodejs
-     watchman
-     phantomjs2
+     #watchman
+     #phantomjs2
 
      yarn
-     
+
      ws
 
      nodePackages.node2nix

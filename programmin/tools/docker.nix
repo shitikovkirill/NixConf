@@ -5,7 +5,7 @@
   [
     docker
     #ctop
-    python36Packages.docker_compose
+    docker-compose
     docker-machine
 
     minikube
