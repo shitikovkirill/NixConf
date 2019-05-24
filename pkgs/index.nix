@@ -14,7 +14,13 @@
 
       anydesk
 
-    
+      keeweb
+      stacker
+      dockstation
+      composercat
+      graphqlplayground
+      snipline
+      snippetstore
     ];
 
     imports = [
