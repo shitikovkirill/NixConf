@@ -16,7 +16,6 @@
 
       keeweb
       stacker
-      dockstation
       composercat
       graphqlplayground
       snipline
@@ -33,7 +32,7 @@
         keeweb = pkgs.callPackage ./custom/KeeWeb {};
         #openlogviewer = pkgs.callPackage ./custom/Logger {};
         stacker = pkgs.callPackage ./custom/Stacker {};
-        dockstation = pkgs.callPackage ./custom/DockStation {};
+        #dockstation = pkgs.callPackage ./custom/DockStation {};
         composercat = pkgs.callPackage ./custom/Composercat {};
         graphqlplayground = pkgs.callPackage ./custom/GraphQLPlayground {};
         snipline = pkgs.callPackage ./custom/Snipline {};
