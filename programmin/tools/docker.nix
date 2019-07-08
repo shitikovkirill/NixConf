@@ -11,9 +11,6 @@
     minikube
     kubectl
     kubernetes-helm
-
-    google-cloud-sdk
-    awscli
   ];
 
   virtualisation.docker.enable = true;
