@@ -7,6 +7,7 @@
    environment.systemPackages = with pkgs; [
      atom
      brackets
+     vscode
    ];
 
    imports = [
