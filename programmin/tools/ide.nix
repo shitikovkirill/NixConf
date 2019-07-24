@@ -8,6 +8,7 @@
      atom
      brackets
      vscode
+     soapui
    ];
 
    imports = [
