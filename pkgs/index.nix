@@ -20,6 +20,8 @@
       graphqlplayground
       snipline
       snippetstore
+      
+      unetbootin
     ];
 
     imports = [
