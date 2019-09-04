@@ -29,6 +29,7 @@
     
     mk_start   = "sudo minikube start";
     mk_con     = "eval $(sudo minikube docker-env)";
+    mk_context = "sudo kubectl config use-context minikube";
     mk_ip      = "sudo minikube ip";
     mk_dash    = "sudo minikube dashboard";
 
