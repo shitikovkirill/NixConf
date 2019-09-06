@@ -6,6 +6,7 @@
     git-cola
     git
     gitAndTools.gitFull
+    gitAndTools.pre-commit
   ];
   
   home-manager.users.kirill = {
