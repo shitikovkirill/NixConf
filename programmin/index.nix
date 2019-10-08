@@ -13,6 +13,7 @@
      ./tools/ide.nix
      ./tools/js.nix
      ./tools/vagrant.nix
+     ./tools/vagga.nix
      ./tools/python.nix
      ./tools/bash.nix
      ./tools/cloud.nix

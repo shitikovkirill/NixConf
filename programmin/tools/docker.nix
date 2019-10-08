@@ -26,6 +26,7 @@
     dhist      = "docker history --no-trunc";
     dlint      = "docker run --rm -i hadolint/hadolint";
     dlint-deb  = "docker run -v $(pwd):/app:ro --workdir=/app --rm -i hadolint/hadolint:latest-debian hadolint";
+    dpoetry    = "docker run -v $(pwd):/app --workdir=/app --rm -it etiennenapoleone/docker-python-poetry bash";
     
     mk_start   = "sudo minikube start";
     mk_con     = "eval $(sudo minikube docker-env)";

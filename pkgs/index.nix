@@ -39,5 +39,6 @@
         graphqlplayground = pkgs.callPackage ./custom/GraphQLPlayground {};
         snipline = pkgs.callPackage ./custom/Snipline {};
         snippetstore = pkgs.callPackage ./custom/SnippetStore {};
+        vagga = pkgs.callPackage ./custom/Vagga {};
     };
 }
