@@ -5,14 +5,15 @@ let
   stdenv = pkgs.stdenv;
   dpkg = pkgs.dpkg;
 
-  appName = "vagga";
+  appName = "vagga-${version}";
+  version = "0.8.1";
   description = "Vagga";
 in stdenv.mkDerivation rec {
   name = appName;
   builder = ./builder.sh;
 
   src = pkgs.fetchurl {
-    url = "https://files.zerogw.com/vagga/vagga-0.8.1.tar.xz";
+    url = "https://files.zerogw.com/vagga/vagga-${version}.tar.xz";
     sha256 = "010s0xdgdv9w1x87pkh1qsyzfykiz59z2inrzqkdw8ixayh7la7z";
   };
 
