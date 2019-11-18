@@ -10,9 +10,9 @@
 
       lastpass-cli
 
-      youtube-dl
+      #youtube-dl
 
-      anydesk
+      #anydesk
 
       keeweb
       stacker

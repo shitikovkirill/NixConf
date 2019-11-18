@@ -18,7 +18,7 @@
      ./tools/bash.nix
      ./tools/cloud.nix
      #./tools/nix-tools.nix
-     #./go.nix
+     ./go.nix
      ./python.nix
      ./php.nix
    ];

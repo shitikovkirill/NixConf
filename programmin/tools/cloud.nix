@@ -9,9 +9,11 @@
     awscli
     aws-sam-cli
     
-    terraform
-    terraform-docs
-    terraform-providers.aws
-    terraform-providers.kubernetes
+    #terraform
+    #terraform-docs
+    #terraform-providers.aws
+    #terraform-providers.kubernetes
+    
+    cloudflared
   ];
  }
