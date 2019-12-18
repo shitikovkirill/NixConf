@@ -5,6 +5,8 @@
    [
      gnumake
      heroku
+     
+     ngrok
    ];
 
    imports = [
