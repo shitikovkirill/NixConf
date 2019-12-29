@@ -1,6 +1,8 @@
 {pkgs, prefix, ... }:
 
 {
+  system.autoUpgrade.enable = false;
+  system.autoUpgrade.channel = https://nixos.org/channels/nixos-19.09;
   time.timeZone = "Europe/Kiev";
 
   imports = [
