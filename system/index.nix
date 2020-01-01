@@ -6,7 +6,6 @@
   ./aliases.nix
   ./network.nix
   ./graphical/kde.nix
-  ./devises/audio.nix
-  ./devises/video.nix
+  ./devises
   ];
 }

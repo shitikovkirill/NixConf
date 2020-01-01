@@ -14,6 +14,7 @@
      ws
 
      nodePackages.node2nix
+     yarn2nix
    ];
 
    home-manager.users.kirill = {
