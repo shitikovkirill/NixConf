@@ -10,10 +10,6 @@
 
       lastpass-cli
 
-      #youtube-dl
-
-      #anydesk
-
       keeweb
       stacker
       composercat
