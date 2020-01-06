@@ -9,12 +9,12 @@ in
   #system.autoUpgrade.enable = true;
 
   imports = [
-  "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/release-19.03.tar.gz}/nixos"
-  ./system/index.nix
-  ./pkgs/index.nix
+  "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/release-19.09.tar.gz}/nixos"
+  ./system
+  ./pkgs
   ./tools/zsh.nix
   ./tools/translate.nix
-  ./programmin/index.nix
-  ./containers/index.nix
+  ./programmin
+  ./containers
   ];
 }

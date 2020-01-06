@@ -16,7 +16,7 @@ with lib;
     };
 
     # Enable touchpad support for many laptops.
-    synaptics.enable = true;
+    # synaptics.enable = true;
 
     videoDrivers = [  "intel" "nvidia" ];
   };
