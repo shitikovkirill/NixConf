@@ -7,6 +7,7 @@
       nox
       nix-info
       nix-index
+      nix-prefetch-git
 
       (pkgs.vim_configurable.customize {
         name = "vim";
