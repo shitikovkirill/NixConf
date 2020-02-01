@@ -4,6 +4,8 @@
    environment.systemPackages = with pkgs;
    [
      gnumake
+     direnv
+
      heroku
      
      ngrok
