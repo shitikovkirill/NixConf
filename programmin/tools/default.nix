@@ -12,5 +12,6 @@
      ./python.nix
      ./bash.nix
      ./cloud.nix
+     ./direnv.nix
    ];
 }
