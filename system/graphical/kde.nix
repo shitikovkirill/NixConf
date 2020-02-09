@@ -12,7 +12,6 @@ with lib;
     };
     desktopManager.plasma5 = {
       enable = true;
-      enableQt4Support = true;
     };
 
     # Enable touchpad support for many laptops.
