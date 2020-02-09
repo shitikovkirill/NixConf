@@ -1,5 +1,4 @@
-
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 let
   stdenv = pkgs.stdenv;
@@ -21,12 +20,14 @@ in pkgs.stdenv.mkDerivation rec {
   name = appName;
 
   src = pkgs.fetchurl {
-    url = "https://github.com/lopidio/stacker/releases/download/v0.1.0/stacker_0.1.0_amd64.deb";
+    url =
+      "https://github.com/lopidio/stacker/releases/download/v0.1.0/stacker_0.1.0_amd64.deb";
     sha256 = "1277kvgnal7f4vml8z7kv8wfhf2zj4sva4n3sbhg708r6aq5rlxa";
   };
 
   icon = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/lopidio/stacker/master/build/logo-small.png";
+    url =
+      "https://raw.githubusercontent.com/lopidio/stacker/master/build/logo-small.png";
     sha256 = "1q9akywy1f1gg770xb9avm4rvcnk300b8qqj0jw202j04f1lg09i";
   };
 
@@ -43,20 +44,19 @@ in pkgs.stdenv.mkDerivation rec {
     cp ${desktopItem}/share/applications/* $out/share/applications
   '';
 
-  packages = with pkgs; [
-    at-spi2-atk
-  ];
+  packages = with pkgs; [ at-spi2-atk ];
 
   libPathNative = with pkgs; lib.makeLibraryPath packages;
   libPath64 = with pkgs; lib.makeSearchPathOutput "lib" "lib64" packages;
   libPath = "${libPathNative}:${libPath64}";
 
-  rpath = with pkgs; lib.concatStringsSep ":" [
-    atomEnv.libPath
-    targetPath
-    "${targetPath}/opt/stacker/"
-    libPath
-  ];
+  rpath = with pkgs;
+    lib.concatStringsSep ":" [
+      atomEnv.libPath
+      targetPath
+      "${targetPath}/opt/stacker/"
+      libPath
+    ];
 
   fixupPhase = ''
     patchelf \
@@ -70,7 +70,7 @@ in pkgs.stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     inherit description;
-    homepage = https://lopidio.github.io/stacker;
+    homepage = "https://lopidio.github.io/stacker";
     license = licenses.agpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ shitikovkirill ];

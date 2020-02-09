@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 
 {
-   environment.systemPackages = with pkgs;
-   [
-     poedit
+  environment.systemPackages = with pkgs; [
+    poedit
 
-     gettext
-   ];
+    gettext
+  ];
 }

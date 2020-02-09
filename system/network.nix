@@ -1,9 +1,6 @@
-let
-  hosts = import ./load-hosts.nix;
-in
-{
-networking.extraHosts =
-  ''
+let hosts = import ./load-hosts.nix;
+in {
+  networking.extraHosts = ''
     0.0.0.0 account.jetbrains.com
     0.0.0.0 stag.loc
     192.168.1.120 git.webwave.loc
@@ -14,6 +11,6 @@ networking.extraHosts =
   '';
 
   networking.hosts = ({
-    
-  })// hosts;
+
+  }) // hosts;
 }

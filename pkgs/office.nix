@@ -1,8 +1,6 @@
 { lib, pkgs, ... }:
 
 {
-    environment.systemPackages = with pkgs; [
-      marp
-    ];
+  environment.systemPackages = with pkgs; [ marp ];
 }
- 
+

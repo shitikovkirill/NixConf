@@ -1,5 +1,4 @@
-
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 let
   stdenv = pkgs.stdenv;
@@ -7,7 +6,8 @@ let
   dynamic-linker = pkgs.stdenv.cc.bintools.dynamicLinker;
 
   appName = "dockstation";
-  description = "DockStation is developer-centric application to managing projects based on Docker.";
+  description =
+    "DockStation is developer-centric application to managing projects based on Docker.";
   desktopItem = pkgs.makeDesktopItem {
     name = appName;
     exec = appName;
@@ -20,7 +20,8 @@ in pkgs.stdenv.mkDerivation rec {
   name = appName;
 
   src = pkgs.fetchurl {
-    url = "https://github.com/DockStation/dockstation/releases/download/v1.5.1/dockstation_1.5.1_amd64.deb";
+    url =
+      "https://github.com/DockStation/dockstation/releases/download/v1.5.1/dockstation_1.5.1_amd64.deb";
     sha256 = "09pj1sjr6djh5fccak41jk8lia96b18r85cpqf39gbyfdxx0bg5b";
   };
 
@@ -42,19 +43,18 @@ in pkgs.stdenv.mkDerivation rec {
     cp ${desktopItem}/share/applications/* $out/share/applications
   '';
 
-  packages = with pkgs; [
-    at-spi2-atk utillinux
-  ];
+  packages = with pkgs; [ at-spi2-atk utillinux ];
 
   libPathNative = with pkgs; lib.makeLibraryPath packages;
   libPath64 = with pkgs; lib.makeSearchPathOutput "lib" "lib64" packages;
   libPath = "${libPathNative}:${libPath64}";
 
-  rpath = with pkgs; lib.concatStringsSep ":" [
-    atomEnv.libPath
-    "${targetPath}/opt/DockStation/"
-    libPath
-  ];
+  rpath = with pkgs;
+    lib.concatStringsSep ":" [
+      atomEnv.libPath
+      "${targetPath}/opt/DockStation/"
+      libPath
+    ];
 
   fixupPhase = ''
     patchelf \
@@ -68,7 +68,7 @@ in pkgs.stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     inherit description;
-    homepage = https://dockstation.io/;
+    homepage = "https://dockstation.io/";
     license = licenses.agpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ shitikovkirill ];

@@ -1,5 +1,4 @@
-
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 let
   stdenv = pkgs.stdenv;
@@ -20,7 +19,8 @@ in pkgs.stdenv.mkDerivation rec {
   name = appName;
 
   src = pkgs.fetchurl {
-    url = "http://downloads.getcomposercat.com/composercat/composercat_0.4.0_amd64.deb";
+    url =
+      "http://downloads.getcomposercat.com/composercat/composercat_0.4.0_amd64.deb";
     sha256 = "1qvqvms6g2rwmll90zidv9dh0m0xvmhjzvgsv2yhh1k33bpdfayx";
   };
 
@@ -42,19 +42,18 @@ in pkgs.stdenv.mkDerivation rec {
     cp ${desktopItem}/share/applications/* $out/share/applications
   '';
 
-  packages = with pkgs; [
-    at-spi2-atk gtk2
-  ];
+  packages = with pkgs; [ at-spi2-atk gtk2 ];
 
   libPathNative = with pkgs; lib.makeLibraryPath packages;
   libPath64 = with pkgs; lib.makeSearchPathOutput "lib" "lib64" packages;
   libPath = "${libPathNative}:${libPath64}";
 
-  rpath = with pkgs; lib.concatStringsSep ":" [
-    atomEnv.libPath
-    "${targetPath}/opt/Composercat/"
-    libPath
-  ];
+  rpath = with pkgs;
+    lib.concatStringsSep ":" [
+      atomEnv.libPath
+      "${targetPath}/opt/Composercat/"
+      libPath
+    ];
 
   fixupPhase = ''
     patchelf \
@@ -68,7 +67,7 @@ in pkgs.stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     inherit description;
-    homepage = https://downloads.getcomposercat.com/;
+    homepage = "https://downloads.getcomposercat.com/";
     license = licenses.agpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ shitikovkirill ];

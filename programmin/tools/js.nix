@@ -1,20 +1,20 @@
 { config, pkgs, ... }:
 
 {
-   environment.systemPackages = with pkgs; [
-     #lessc
-     #sass
+  environment.systemPackages = with pkgs; [
+    #lessc
+    #sass
 
-     nodejs
-     #watchman
-     #phantomjs2
+    nodejs
+    #watchman
+    #phantomjs2
 
-     yarn
+    yarn
 
-     ws
-   ];
+    ws
+  ];
 
-   home-manager.users.kirill = {
-     home.file.".npmrc".source = ./dotfiles/npm/npmrc;
-   };
+  home-manager.users.kirill = {
+    home.file.".npmrc".source = ./dotfiles/npm/npmrc;
+  };
 }

@@ -1,7 +1,6 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   # Xfce
-  services.xserver= {
+  services.xserver = {
     desktopManager = {
       xfce.enable = true;
       xfce.thunarPlugins = [ pkgs.xfce.thunar-archive-plugin ];
@@ -15,10 +14,10 @@
   networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [
-      networkmanagerapplet
-      xfce.xfce4-whiskermenu-plugin
-      xfce.xfce4-xkb-plugin
-      xfce.thunar-archive-plugin
-      plano-theme
-   ];
+    networkmanagerapplet
+    xfce.xfce4-whiskermenu-plugin
+    xfce.xfce4-xkb-plugin
+    xfce.thunar-archive-plugin
+    plano-theme
+  ];
 }

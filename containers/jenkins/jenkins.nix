@@ -4,11 +4,10 @@
   services = {
     jenkins = {
       enable = true;
-      listenAddress="localhost";
+      listenAddress = "localhost";
       user = "root";
       extraGroups = [ "wheel" "docker" ];
-      packages = with pkgs;
-        [
+      packages = with pkgs; [
         wget
 
         git
@@ -22,23 +21,22 @@
 
         google-cloud-sdk
         awscli
-        ];
+      ];
     };
   };
-
 
   virtualisation.docker.enable = true;
 
   programs.bash.shellAliases = {
-    drcont   = "docker rm $(docker ps -a -q)";
-    drimage  = "docker rmi $(docker images -q)";
+    drcont = "docker rm $(docker ps -a -q)";
+    drimage = "docker rmi $(docker images -q)";
     drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
-    dcstop   = "docker stop $(docker ps -aq)";
-    clear_nixp = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old && nix-collect-garbage -d && sudo nix-collect-garbage -d";
+    dcstop = "docker stop $(docker ps -aq)";
+    clear_nixp =
+      "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old && nix-collect-garbage -d && sudo nix-collect-garbage -d";
   };
 
-  environment.systemPackages = with pkgs;
-  [
+  environment.systemPackages = with pkgs; [
     wget
     php
     php72Packages.composer
@@ -58,4 +56,4 @@
 
   environment.variables.PATH = "~/.config/composer/vendor/bin/:$PATH";
 
- }
+}

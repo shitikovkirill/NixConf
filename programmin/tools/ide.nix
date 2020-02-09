@@ -1,17 +1,10 @@
 { config, pkgs, ... }:
 
 {
-   programs.bash.enableCompletion = true;
-   nixpkgs.config.allowUnfree = true;
+  programs.bash.enableCompletion = true;
+  nixpkgs.config.allowUnfree = true;
 
-   environment.systemPackages = with pkgs; [
-     atom
-     brackets
-     vscode
-     soapui
-   ];
+  environment.systemPackages = with pkgs; [ atom brackets vscode soapui ];
 
-   imports = [
-     ./jetbrains.nix
-   ];
+  imports = [ ./jetbrains.nix ];
 }

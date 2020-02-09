@@ -1,5 +1,4 @@
-
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 let
   stdenv = pkgs.stdenv;
@@ -7,7 +6,8 @@ let
   dynamic-linker = stdenv.cc.bintools.dynamicLinker;
 
   appName = "snipline";
-  description = "Store your complex commands with dynamic parameters for easy retrieval with a fast workflow in mind.";
+  description =
+    "Store your complex commands with dynamic parameters for easy retrieval with a fast workflow in mind.";
   desktopItem = pkgs.makeDesktopItem {
     name = appName;
     exec = appName;
@@ -20,7 +20,8 @@ in stdenv.mkDerivation rec {
   name = appName;
 
   src = pkgs.fetchurl {
-    url = "https://desktop.downloads.snipline.io/download/0.7.0/linux_64/snipline_0.7.0_amd64.deb";
+    url =
+      "https://desktop.downloads.snipline.io/download/0.7.0/linux_64/snipline_0.7.0_amd64.deb";
     sha256 = "13l2yg3429yqf6rcs7vhww84z3g9lwfair8mxl3a04lfmhk4l4ig";
   };
 
@@ -40,19 +41,18 @@ in stdenv.mkDerivation rec {
     cp ${desktopItem}/share/applications/* $out/share/applications
   '';
 
-  packages = with pkgs; [
-    at-spi2-atk
-  ];
+  packages = with pkgs; [ at-spi2-atk ];
 
   libPathNative = with pkgs; lib.makeLibraryPath packages;
   libPath64 = with pkgs; lib.makeSearchPathOutput "lib" "lib64" packages;
   libPath = "${libPathNative}:${libPath64}";
 
-  rpath = with pkgs; lib.concatStringsSep ":" [
-    atomEnv.libPath
-    "$out/usr/lib/snipline/"
-    libPath
-  ];
+  rpath = with pkgs;
+    lib.concatStringsSep ":" [
+      atomEnv.libPath
+      "$out/usr/lib/snipline/"
+      libPath
+    ];
 
   fixupPhase = ''
     ls -la $out/usr/bin/snipline
@@ -68,7 +68,7 @@ in stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     inherit description;
-    homepage = https://github.com/prisma/graphql-playground;
+    homepage = "https://github.com/prisma/graphql-playground";
     license = licenses.agpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ shitikovkirill ];

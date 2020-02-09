@@ -1,5 +1,4 @@
-
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
 let
   stdenv = pkgs.stdenv;
@@ -19,7 +18,7 @@ in stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     inherit description;
-    homepage = https://vagga.readthedocs.io/en/latest/index.html;
+    homepage = "https://vagga.readthedocs.io/en/latest/index.html";
     license = licenses.agpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ shitikovkirill ];

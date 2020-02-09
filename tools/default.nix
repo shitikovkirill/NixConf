@@ -1,6 +1,1 @@
-{
-  imports = [
-    ./zsh.nix
-    ./translate.nix
-  ];
-}
+{ imports = [ ./zsh.nix ./translate.nix ]; }

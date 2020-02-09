@@ -1,7 +1,1 @@
-{
-  imports = [
-    ./audio.nix
-    ./video.nix
-    ./bluetooth.nix
-  ];
-} 
+{ imports = [ ./audio.nix ./video.nix ./bluetooth.nix ]; }

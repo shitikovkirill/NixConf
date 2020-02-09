@@ -1,8 +1,7 @@
 let
   secrets = import ../load-secrets.nix;
   shared = import ../shared.nix;
-in
-{
+in {
   environment.variables = {
     GITHUB_TOKEN = secrets.github_token;
     AWS_ACCESS_KEY_ID = secrets.aws_access_key_id;

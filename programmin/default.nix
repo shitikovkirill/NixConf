@@ -1,19 +1,18 @@
 { config, pkgs, ... }:
 
 {
-   environment.systemPackages = with pkgs;
-   [
-     gnumake
+  environment.systemPackages = with pkgs; [
+    gnumake
 
-     heroku
-     
-     ngrok
-   ];
+    heroku
 
-   imports = [
-     ./tools
-     #./go.nix
-     #./python.nix
-     #./php.nix
-   ];
+    ngrok
+  ];
+
+  imports = [
+    ./tools
+    #./go.nix
+    #./python.nix
+    #./php.nix
+  ];
 }

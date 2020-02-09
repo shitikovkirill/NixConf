@@ -1,13 +1,13 @@
 {
-    system.stateVersion = "unstable";
+  system.stateVersion = "unstable";
 
-    imports = [
-        ./sudoers.nix
-        ./users.nix
-        ./envvar.nix
-        ./aliases.nix
-        ./network.nix
-        ./graphical/kde.nix
-        ./devises
-    ];
+  imports = [
+    ./sudoers.nix
+    ./users.nix
+    ./envvar.nix
+    ./aliases.nix
+    ./network.nix
+    ./graphical/kde.nix
+    ./devises
+  ];
 }
