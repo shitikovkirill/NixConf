@@ -3,6 +3,8 @@
 let
   domain = "sentry.loc";
   proxy_pass = "127.0.0.1:9000";
+  redis_host = "192.168.1.120";
+  postgres_host = "192.168.1.120";
 in {
   networking.firewall = {
     enable = false;
@@ -42,8 +44,8 @@ in {
                 --rm \
                 -p ${proxy_pass}:9000 \
                 -e SENTRY_URL_PREFIX=https://${domain} \
-                -e SENTRY_REDIS_HOST=127.0.0.1 \
-                -e SENTRY_POSTGRES_HOST=127.0.0.1 \
+                -e SENTRY_REDIS_HOST=${redis_host} \
+                -e SENTRY_POSTGRES_HOST=${postgres_host} \
                 -e SENTRY_DB_USER=sentry \
                 -e SENTRY_DB_NAME=sentry \
                 -e SENTRY_DB_PASSWORD=sentry \
@@ -64,8 +66,8 @@ in {
         ${pkgs.docker}/bin/docker run \
                 --rm \
                 -e SENTRY_URL_PREFIX=https://${domain} \
-                -e SENTRY_REDIS_HOST=127.0.0.1 \
-                -e SENTRY_POSTGRES_HOST=127.0.0.1 \
+                -e SENTRY_REDIS_HOST=${redis_host} \
+                -e SENTRY_POSTGRES_HOST=${postgres_host} \
                 -e SENTRY_DB_USER=sentry \
                 -e SENTRY_DB_NAME=sentry \
                 -e SENTRY_DB_PASSWORD=sentry \
@@ -86,8 +88,8 @@ in {
         ${pkgs.docker}/bin/docker run \
                 --rm \
                 -e SENTRY_URL_PREFIX=https://${domain} \
-                -e SENTRY_REDIS_HOST=127.0.0.1 \
-                -e SENTRY_POSTGRES_HOST=127.0.0.1 \
+                -e SENTRY_REDIS_HOST=${redis_host} \
+                -e SENTRY_POSTGRES_HOST=${postgres_host} \
                 -e SENTRY_DB_USER=sentry \
                 -e SENTRY_DB_NAME=sentry \
                 -e SENTRY_DB_PASSWORD=sentry \
