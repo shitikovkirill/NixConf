@@ -5,6 +5,10 @@ let
   proxy_pass = "127.0.0.1:9000";
   redis_host = "172.17.0.1";
   postgres_host = "172.17.0.1";
+  db_user = "sentry";
+  db_name = "sentry";
+  db_password = "sentry";
+  secret_key = "sentry";
 in {
   networking.firewall = {
     enable = false;
@@ -116,6 +120,6 @@ in {
   services.redis = {
     enable = true;
     bind = "0.0.0.0";
-    };
+};
 
 }
