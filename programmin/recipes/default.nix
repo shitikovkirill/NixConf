@@ -7,5 +7,6 @@
      ./pgmanage.nix
      ./mailcatcher.nix
      ./mail.nix
+     ./sentry.nix
    ];
 }
