@@ -3,8 +3,8 @@
 let
   domain = "sentry.loc";
   proxy_pass = "127.0.0.1:9000";
-  redis_host = "192.168.1.120";
-  postgres_host = "192.168.1.120";
+  redis_host = "172.17.0.1";
+  postgres_host = "172.17.0.1";
 in {
   networking.firewall = {
     enable = false;
