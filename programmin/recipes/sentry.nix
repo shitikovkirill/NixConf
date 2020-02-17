@@ -1,0 +1,109 @@
+{ config, lib, pkgs, ... }:
+
+let
+  domain = "sentry.loc";
+  proxy_pass = "127.0.0.1:9000";
+in {
+  networking.firewall = {
+    enable = false;
+    allowedTCPPorts = [ 80 443 ];
+  };
+
+  services.nginx = {
+    enable = true;
+    virtualHosts."${domain}" = {
+      enableACME = false;
+      forceSSL = false;
+      locations = {
+        "/".extraConfig = ''
+          proxy_pass        http://${proxy_pass};
+          add_header Strict-Transport-Security "max-age=31536000";
+        '';
+      };
+    };
+  };
+
+  systemd.services.sentry_web = {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    requires = [ "docker.service" ];
+    serviceConfig = {
+      TimeoutStartSec = 0;
+      Restart = "always";
+      ExecStartPre = [ "-${pkgs.docker}/bin/docker pull sentry" ];
+      ExecStart = ''
+        ${pkgs.docker}/bin/docker run \
+                --rm \
+                -p ${proxy_pass}:9000 \
+                -e SENTRY_URL_PREFIX=https://${domain} \
+                -e SENTRY_REDIS_HOST=127.0.0.1 \
+                -e SENTRY_POSTGRES_HOST=127.0.0.1 \
+                -e SENTRY_DB_USER=sentry \
+                -e SENTRY_DB_NAME=sentry \
+                -e SENTRY_DB_PASSWORD=sentry \
+                -e SENTRY_SECRET_KEY=sentry \
+                sentry run web'';
+    };
+  };
+
+  systemd.services.sentry_worker = {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    requires = [ "docker.service" ];
+    serviceConfig = {
+      TimeoutStartSec = 0;
+      Restart = "always";
+      ExecStartPre = [ "-${pkgs.docker}/bin/docker pull sentry" ];
+      ExecStart = ''
+        ${pkgs.docker}/bin/docker run \
+                --rm \
+                -e SENTRY_URL_PREFIX=https://${domain} \
+                -e SENTRY_REDIS_HOST=127.0.0.1 \
+                -e SENTRY_POSTGRES_HOST=127.0.0.1 \
+                -e SENTRY_DB_USER=sentry \
+                -e SENTRY_DB_NAME=sentry \
+                -e SENTRY_DB_PASSWORD=sentry \
+                -e SENTRY_SECRET_KEY=sentry \
+                sentry run worker'';
+    };
+  };
+
+  systemd.services.sentry_cron = {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    requires = [ "docker.service" ];
+    serviceConfig = {
+      TimeoutStartSec = 0;
+      Restart = "always";
+      ExecStartPre = [ "-${pkgs.docker}/bin/docker pull sentry" ];
+      ExecStart = ''
+        ${pkgs.docker}/bin/docker run \
+                --rm \
+                -e SENTRY_URL_PREFIX=https://${domain} \
+                -e SENTRY_REDIS_HOST=127.0.0.1 \
+                -e SENTRY_POSTGRES_HOST=127.0.0.1 \
+                -e SENTRY_DB_USER=sentry \
+                -e SENTRY_DB_NAME=sentry \
+                -e SENTRY_DB_PASSWORD=sentry \
+                -e SENTRY_SECRET_KEY=sentry \
+                sentry run cron'';
+    };
+  };
+
+  services.postgresql = {
+    enable = true;
+    enableTCPIP = true;
+    authentication = pkgs.lib.mkOverride 10 ''
+      local all all trust
+      host all all ::1/128 trust
+    '';
+    initialScript = pkgs.writeText "backend-initScript" ''
+      CREATE ROLE medtest WITH LOGIN PASSWORD 'secret' CREATEDB;
+      CREATE DATABASE medtest_db;
+      GRANT ALL PRIVILEGES ON DATABASE medtest_db TO homestead;
+    '';
+  };
+
+  services.redis = { enable = true; };
+
+}
