@@ -6,7 +6,7 @@ let
   redis_host = "172.17.0.1";
   postgres_host = "172.17.0.1";
   db_user = "sentry";
-  db_name = "sentry";
+  db_name = "sentry_db";
   db_password = "sentry";
   secret_key = "sentry";
 in {
