@@ -22,6 +22,12 @@ in {
       };
     };
   };
+  
+  environment.systemPackages = with pkgs; [
+    docker
+  ];
+
+  virtualisation.docker.enable = true;
 
   systemd.services.sentry_web = {
     wantedBy = [ "multi-user.target" ];
