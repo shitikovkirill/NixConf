@@ -98,9 +98,9 @@ in {
       host all all ::1/128 trust
     '';
     initialScript = pkgs.writeText "backend-initScript" ''
-      CREATE ROLE medtest WITH LOGIN PASSWORD 'secret' CREATEDB;
-      CREATE DATABASE medtest_db;
-      GRANT ALL PRIVILEGES ON DATABASE medtest_db TO homestead;
+      CREATE ROLE sentry WITH LOGIN PASSWORD 'sentry' CREATEDB;
+      CREATE DATABASE sentry;
+      GRANT ALL PRIVILEGES ON DATABASE sentry TO sentry;
     '';
   };
 
