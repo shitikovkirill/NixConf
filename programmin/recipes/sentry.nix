@@ -112,6 +112,9 @@ in {
     '';
   };
 
-  services.redis = { enable = true; };
+  services.redis = {
+    enable = true;
+    bind = "0.0.0.0";
+    };
 
 }
