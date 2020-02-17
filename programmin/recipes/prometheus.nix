@@ -30,14 +30,18 @@ in {
     
     services.grafana = {
         enable = true;
-        #addr = "0.0.0.0";
-        provision.datasources = [
-            { 
-                name = "LocalServer";
-                type = "prometheus"; 
-                url = "http://localhost:9090";
-            }
-        ];
+        provision = { 
+            enable = true;
+            datasources = [ 
+                { 
+                    name = "NodeStatistic";
+                    type = "prometheus";
+                    url = "http://localhost:9090";
+                    isDefault = true;
+                    user = "admin";
+                } 
+            ];
+        };
     };
     
     services.prometheus = {
@@ -46,29 +50,46 @@ in {
             {
                 job_name = "prometeus";
                 static_configs =  [ 
-                    { targets = ["localhost:9090"]; }
+                    { 
+                        targets = ["localhost:9090"];
+                        labels = { alias = "prometeus"; };
+                    }
                 ];
             }
             {
                 job_name = "node";
                 static_configs =  [ 
-                    { targets = ["localhost:9100"]; }
+                    { 
+                        targets = ["localhost:9100"];
+                        labels = { alias = "node"; };
+                    }
+                ];
+            }
+            {
+                job_name = "postfix";
+                static_configs =  [ 
+                    { 
+                        targets = ["localhost:9154"];
+                        labels = { alias = "node"; };
+                    }
                 ];
             }
         ];
     };
     
-    services.prometheus.exporters.node = {
-        enable = true;
-        enabledCollectors = [
-            "logind"
-            "systemd"
-        ];
-        disabledCollectors = [
-            "textfile"
-        ];
-        openFirewall = true;
-        #firewallFilter = "-i br0 -p tcp -m tcp --dport 9100";
+    services.prometheus.exporters = {
+        node = {
+            enable = true;
+            enabledCollectors = [
+                "logind"
+                "systemd"
+            ];
+            disabledCollectors = [
+                "textfile"
+            ];
+            openFirewall = true;
+            #firewallFilter = "-i br0 -p tcp -m tcp --dport 9100";
+        };
     };
 }
  
