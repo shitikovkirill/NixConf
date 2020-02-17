@@ -28,10 +28,8 @@ in {
       };
     };
   };
-  
-  environment.systemPackages = with pkgs; [
-    docker
-  ];
+
+  environment.systemPackages = with pkgs; [ docker ];
 
   virtualisation.docker.enable = true;
 
@@ -121,6 +119,6 @@ in {
   services.redis = {
     enable = true;
     bind = "0.0.0.0";
-};
+  };
 
 }

@@ -1,14 +1,11 @@
 { config, pkgs, ... }:
 
 {
-   environment.systemPackages = with pkgs;
-   [
-     gnumake
-   ];
+  environment.systemPackages = with pkgs; [ gnumake ];
 
-   imports = [
-     ./git.nix
-     #./docker.nix
-     ./ide.nix
-   ];
+  imports = [
+    ./git.nix
+    #./docker.nix
+    ./ide.nix
+  ];
 }
