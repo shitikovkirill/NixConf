@@ -8,7 +8,7 @@ let
 in {
   networking.firewall = {
     enable = false;
-    allowedTCPPorts = [ 80 443 ];
+    allowedTCPPorts = [ 80 443 9001 ];
   };
 
   services.nginx = {
