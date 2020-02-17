@@ -50,10 +50,10 @@ in {
                 -e SENTRY_URL_PREFIX=https://${domain} \
                 -e SENTRY_REDIS_HOST=${redis_host} \
                 -e SENTRY_POSTGRES_HOST=${postgres_host} \
-                -e SENTRY_DB_USER=sentry \
-                -e SENTRY_DB_NAME=sentry \
-                -e SENTRY_DB_PASSWORD=sentry \
-                -e SENTRY_SECRET_KEY=sentry \
+                -e SENTRY_DB_USER=${db_user} \
+                -e SENTRY_DB_NAME=${db_name} \
+                -e SENTRY_DB_PASSWORD=${db_password} \
+                -e SENTRY_SECRET_KEY=${secret_key} \
                 sentry run web'';
     };
   };
@@ -72,10 +72,10 @@ in {
                 -e SENTRY_URL_PREFIX=https://${domain} \
                 -e SENTRY_REDIS_HOST=${redis_host} \
                 -e SENTRY_POSTGRES_HOST=${postgres_host} \
-                -e SENTRY_DB_USER=sentry \
-                -e SENTRY_DB_NAME=sentry \
-                -e SENTRY_DB_PASSWORD=sentry \
-                -e SENTRY_SECRET_KEY=sentry \
+                -e SENTRY_DB_USER=${db_user} \
+                -e SENTRY_DB_NAME=${db_name} \
+                -e SENTRY_DB_PASSWORD=${db_password} \
+                -e SENTRY_SECRET_KEY=${secret_key} \
                 sentry run worker'';
     };
   };
@@ -94,10 +94,10 @@ in {
                 -e SENTRY_URL_PREFIX=https://${domain} \
                 -e SENTRY_REDIS_HOST=${redis_host} \
                 -e SENTRY_POSTGRES_HOST=${postgres_host} \
-                -e SENTRY_DB_USER=sentry \
-                -e SENTRY_DB_NAME=sentry \
-                -e SENTRY_DB_PASSWORD=sentry \
-                -e SENTRY_SECRET_KEY=sentry \
+                -e SENTRY_DB_USER=${db_user} \
+                -e SENTRY_DB_NAME=${db_name} \
+                -e SENTRY_DB_PASSWORD=${db_password} \
+                -e SENTRY_SECRET_KEY=${secret_key} \
                 sentry run cron'';
     };
   };
@@ -111,9 +111,10 @@ in {
       host all all 0.0.0.0/0 trust
     '';
     initialScript = pkgs.writeText "backend-initScript" ''
-      CREATE ROLE sentry WITH LOGIN PASSWORD 'sentry' CREATEDB;
-      CREATE DATABASE sentry;
-      GRANT ALL PRIVILEGES ON DATABASE sentry TO sentry;
+      CREATE ROLE ${db_user} WITH LOGIN PASSWORD '${db_password}' CREATEDB;
+      CREATE DATABASE ${db_name};
+      GRANT ALL PRIVILEGES ON DATABASE ${db_name} TO ${db_user};
+      ALTER USER ${db_user} WITH SUPERUSER;
     '';
   };
 
