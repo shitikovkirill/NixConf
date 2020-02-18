@@ -7,3 +7,4 @@ id_rsa
 not_in_git*
 .direnv
 profile.nix
+result
