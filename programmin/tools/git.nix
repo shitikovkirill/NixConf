@@ -5,6 +5,7 @@
     gitg
     git-cola
     git
+    git-crypt
     gitAndTools.gitFull
     gitAndTools.pre-commit
   ];
