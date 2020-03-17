@@ -4,5 +4,6 @@
    imports = [
      ./recipes
      ./tools
+     ./rabbitmq.nix
    ];
 }
