@@ -30,7 +30,7 @@ with lib;
     kdeApplications.okular
     kdeApplications.spectacle
     kcachegrind
-    ktorrent
+    # ktorrent
     dragon
     filelight
     kdeconnect
