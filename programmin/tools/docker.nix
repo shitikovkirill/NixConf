@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     docker
-    arion
+    #arion
     #ctop
     docker-compose
     docker-machine
