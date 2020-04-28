@@ -5,13 +5,13 @@
     #lessc
     #sass
 
-    nodejs
+    #nodejs
     #watchman
     #phantomjs2
 
-    yarn
+    #yarn
 
-    ws
+    #ws
   ];
 
   home-manager.users.kirill = {
