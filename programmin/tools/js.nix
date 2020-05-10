@@ -14,9 +14,9 @@ in {
     #watchman
     #phantomjs2
 
-    yarn
+    #yarn
 
-    ws
+    #ws
   ];
 
   ### Need for install global pacages to custom dir
