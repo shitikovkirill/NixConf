@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     gnumake
 
-    heroku
+    #heroku
 
     ngrok
   ];

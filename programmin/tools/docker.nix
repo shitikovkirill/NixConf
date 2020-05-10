@@ -8,9 +8,9 @@
     docker-compose
     docker-machine
 
-    minikube
+    #minikube
     kubectl
-    kubernetes-helm
+    #kubernetes-helm
   ];
 
   virtualisation.docker.enable = true;
