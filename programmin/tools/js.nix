@@ -10,7 +10,7 @@ in {
     #lessc
     #sass
 
-    nodejs
+    #nodejs
     #watchman
     #phantomjs2
 
