@@ -20,6 +20,10 @@
     unetbootin
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "p7zip-16.02"
+  ];
+
   imports = [ ./social.nix ./browser.nix ./office.nix ];
 
   nixpkgs.config.packageOverrides = super: {
