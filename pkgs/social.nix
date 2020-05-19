@@ -1,5 +1,5 @@
 { lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ tdesktop discord ];
+  environment.systemPackages = with pkgs; [ tdesktop discord zoom-us ];
 }
