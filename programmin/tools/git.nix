@@ -26,7 +26,7 @@
     };
   };
 
-  programs.bash.shellAliases = {
+  environment.shellAliases = {
     git-show-local-merged-b =
       "git branch --merged | grep -v master | grep -v develop";
     git-show-remote-merged-b =

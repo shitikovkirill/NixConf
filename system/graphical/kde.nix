@@ -39,7 +39,7 @@ with lib;
   ];
 
   # reload icons in kde
-  programs.bash.shellAliases = {
+  environment.shellAliases = {
     kde_update = "rm ~/.cache/ksycoca5_* -rf && kbuildsycoca5";
   };
 }

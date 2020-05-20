@@ -16,5 +16,11 @@
         start = [ vim-nix ]; # load plugin on startup
       };
     })
+    
+    h
   ];
+  
+  environment.shellAliases = {
+    h = ''cd "$(h ~/Programming "$@")"'';
+  };
 }

@@ -1,5 +1,5 @@
 {
-  programs.bash.shellAliases = {
+  environment.shellAliases = {
     clear_trash = "MYHOME=$HOME && sudo rm -rf $MYHOME/.local/share/Trash";
     clear_nixp =
       "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old && nix-collect-garbage -d && sudo nix-collect-garbage -d";
