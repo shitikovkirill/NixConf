@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
-{
+let
+hInit = ''
+  eval "$(h --setup ~/Programming)"
+'';
+in {
   programs.bash.enableCompletion = true;
 
   environment.systemPackages = with pkgs; [
@@ -19,8 +23,7 @@
     
     h
   ];
-  
-  environment.shellAliases = {
-    h = ''cd "$(h ~/Programming "$@")"'';
-  };
+
+  programs.zsh.shellInit = hInit;
+  programs.bash.shellInit = hInit;
 }
