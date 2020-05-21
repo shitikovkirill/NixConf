@@ -1,10 +1,11 @@
 { config, pkgs, ... }: {
   programs.zsh = {
     enable = true;
-    histSize = 5000;
+    histSize = 10000;
     ohMyZsh = {
       enable = true;
-      plugins = [ "git" "python" "man" ];
+      plugins =
+        [ "man" "history" "systemd" "systemadmin" ];
       theme = "agnoster";
     };
   };

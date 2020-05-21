@@ -16,6 +16,12 @@
   virtualisation.docker.enable = true;
   users.users.kirill.extraGroups = [ "docker" ];
 
+  programs.zsh = {
+    ohMyZsh = {
+      plugins = [ "docker" "docker-compose" ];
+    };
+  };
+
   environment.shellAliases = {
     drcont = "docker rm $(docker ps -a -q)";
     drimage = "docker rmi $(docker images -q)";

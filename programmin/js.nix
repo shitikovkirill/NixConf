@@ -14,8 +14,14 @@
     #ws
   ];
 
+  programs.zsh = {
+    ohMyZsh = {
+      plugins = [ "yarn" ];
+    };
+  };
+
   ### Need for install global pacages to custom dir
   home-manager.users.kirill = {
-    home.file.".npmrc".source = ./dotfiles/npm/npmrc;
+    home.file.".npmrc".source = ./tools/dotfiles/npm/npmrc;
   };
 }

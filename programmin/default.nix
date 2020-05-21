@@ -11,9 +11,9 @@
 
   imports = [
     ./tools
-    #./server.nix
-    #./go.nix
-    #./python.nix
+    ./go.nix
+    ./python.nix
+    ./js.nix
     #./php.nix
   ];
 }

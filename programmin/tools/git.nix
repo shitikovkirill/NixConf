@@ -26,6 +26,12 @@
     };
   };
 
+  programs.zsh = {
+    ohMyZsh = {
+      plugins = [ "git" "gitignore" ];
+    };
+  };
+
   environment.shellAliases = {
     git-show-local-merged-b =
       "git branch --merged | grep -v master | grep -v develop";
