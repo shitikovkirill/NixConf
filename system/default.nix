@@ -9,5 +9,6 @@
     ./network.nix
     ./graphical/kde.nix
     ./devises
+    ./kvm.nix
   ];
 }
