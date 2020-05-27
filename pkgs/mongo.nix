@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     robo3t
-    compass
+    mongodb-compass
   ];
 }
 
