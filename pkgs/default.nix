@@ -24,7 +24,7 @@
     "p7zip-16.02"
   ];
 
-  imports = [ ./social.nix ./browser.nix ./office.nix ];
+  imports = [ ./social.nix ./browser.nix ./office.nix ./mongo.nix ];
 
   nixpkgs.config.packageOverrides = super: {
     keeweb = pkgs.callPackage ./custom/KeeWeb { };
