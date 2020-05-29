@@ -24,6 +24,7 @@ in {
     h
   ];
 
+  services.lorri.enable = true;
   programs.zsh.shellInit = hInit;
   programs.bash.shellInit = hInit;
 }
