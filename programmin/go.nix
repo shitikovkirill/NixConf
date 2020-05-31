@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ go golint dep mod ];
+  environment.systemPackages = with pkgs; [ go golint dep mod golangci-lint ];
 
   programs.zsh = { ohMyZsh = { plugins = [ "golang" ]; }; };
 
