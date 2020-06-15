@@ -7,7 +7,7 @@ let
   reset = name:
     pkgs.writeShellScriptBin "reset-${name}" ''
       echo "Removing evaluation key for ${name}"
-      rm -rf ~/.${name}*/config/eval
+      rm -rf ~/.config/JetBrains/${name}*/config/eval
       rm -rf ~/.java/.userPrefs/jetbrains/${pkgs.lib.strings.toLower name}
 
       echo "Resetting evalsprt in options.xml for ${name}"
@@ -17,8 +17,8 @@ let
       sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
 
       echo "Change date file for ${name}"
-      find ~/.${name}* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-      find ~/.${name}* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
+      find ~/.config/JetBrains/${name}* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
+      find ~/.config/JetBrains/${name}* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
 
       ${pkgs.cowsay}/bin/cowsay "Done"
     '';
