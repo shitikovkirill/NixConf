@@ -32,6 +32,7 @@ in pkgs.stdenv.mkDerivation rec {
     (reset "PyCharm")
     (reset "RubyMine")
     (reset "PhpStorm")
+    (reset "GoLand")
     pkgs.cowsay
   ];
 
