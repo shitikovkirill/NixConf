@@ -4,7 +4,11 @@ let
   shared = import ./shared.nix;
 in {
   time.timeZone = "Europe/Kiev";
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    #allowBroken = true;
+  };
+
 
   imports = [
     "${
