@@ -7,11 +7,11 @@ let
   reset = name:
     pkgs.writeShellScriptBin "reset-${name}" ''
       echo "Removing evaluation key for ${name}"
-      rm -rf ~/.config/JetBrains/${name}*/config/eval
+      rm -rf ~/.config/JetBrains/${name}*/eval
       rm -rf ~/.java/.userPrefs/jetbrains/${pkgs.lib.strings.toLower name}
 
       echo "Resetting evalsprt in options.xml for ${name}"
-      sed -i '/evlsprt/d' ~/.${name}*/config/options/other.xml
+      sed -i '/evlsprt/d' ~/.config/JetBrains/${name}*/options/other.xml
 
       echo "Resetting evalsprt in prefs.xml"
       sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
