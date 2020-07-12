@@ -6,6 +6,6 @@
     clear_dns = "sudo nscd -i hosts";
     fix_own = "sudo chown -R $(id -un):$(id -gn)";
     find_from_current_folder = "grep -rni $(pwd) -e ";
-    nixfmt_this = "find . -print -name '*.nix' -exec nixfmt {} \;"
+    nixfmt_this = "find . -print -name '*.nix' -exec nixfmt {} \;";
   };
 }
