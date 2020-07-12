@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 let
-hInit = ''
-  eval "$(h --setup ~/Programming)"
-'';
+  hInit = ''
+    eval "$(h --setup ~/Programming)"
+  '';
 in {
   programs.bash.enableCompletion = true;
 
@@ -20,7 +20,7 @@ in {
         start = [ vim-nix ]; # load plugin on startup
       };
     })
-    
+
     h
   ];
 

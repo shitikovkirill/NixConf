@@ -14,11 +14,7 @@
     #ws
   ];
 
-  programs.zsh = {
-    ohMyZsh = {
-      plugins = [ "yarn" ];
-    };
-  };
+  programs.zsh = { ohMyZsh = { plugins = [ "yarn" ]; }; };
 
   ### Need for install global pacages to custom dir
   home-manager.users.kirill = {

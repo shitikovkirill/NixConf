@@ -4,8 +4,7 @@
     histSize = 10000;
     ohMyZsh = {
       enable = true;
-      plugins =
-        [ "man" "history" "systemd" "systemadmin" ];
+      plugins = [ "man" "history" "systemd" "systemadmin" ];
       theme = "agnoster";
     };
   };

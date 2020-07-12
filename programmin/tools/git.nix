@@ -26,11 +26,7 @@
     };
   };
 
-  programs.zsh = {
-    ohMyZsh = {
-      plugins = [ "git" "gitignore" ];
-    };
-  };
+  programs.zsh = { ohMyZsh = { plugins = [ "git" "gitignore" ]; }; };
 
   environment.shellAliases = {
     git-show-local-merged-b =
