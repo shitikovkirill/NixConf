@@ -6,7 +6,7 @@
 
     # AWS
     awscli
-    aws-sam-cli
+    #aws-sam-cli
 
     #terraform
     #terraform-docs
