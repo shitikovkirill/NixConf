@@ -9,6 +9,10 @@
 	editor = nano
 [color]
 	ui = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[url "ssh://git@lab.thinkglobal.space/"]
+	insteadOf = https://lab.thinkglobal.space/
 [alias]
 	ct = checkout
 	br = branch

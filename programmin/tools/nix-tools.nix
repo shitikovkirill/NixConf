@@ -8,6 +8,7 @@ in {
   programs.bash.enableCompletion = true;
 
   environment.systemPackages = with pkgs; [
+    niv
     nox
     nix-info
     nix-index
