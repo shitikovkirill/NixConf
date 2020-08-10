@@ -1,10 +1,7 @@
 let hosts = import ./load-hosts.nix;
 in {
-  networking.extraHosts = ''
-    0.0.0.0 account.jetbrains.com
-  '';
-
   networking.hosts = ({
-
+  "0.0.0.0" = [ "account.jetbrains.com" ];
+  "192.168.1.150" = [ "dev.server" ];
   }) // hosts;
 }
