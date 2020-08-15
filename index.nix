@@ -18,6 +18,6 @@ in {
     ./pkgs
     ./tools
     ./programmin
-    ./containers
+    # ./containers
   ];
 }

@@ -6,8 +6,8 @@
     ./git.nix
     ./docker.nix
     ./ide.nix
-    ./vagrant.nix
-    ./vagga.nix
+    # ./vagrant.nix
+    # ./vagga.nix
     ./bash.nix
     ./cloud.nix
     ./direnv.nix

@@ -11,18 +11,18 @@
     lastpass-cli
 
     keeweb
-    stacker
-    composercat
-    graphqlplayground
-    snipline
-    snippetstore
+    #stacker
+    #composercat
+    #graphqlplayground
+    #snipline
+    #snippetstore
 
-    unetbootin
+    #unetbootin
   ];
 
   nixpkgs.config.permittedInsecurePackages = [ "p7zip-16.02" ];
 
-  imports = [ ./social.nix ./browser.nix ./office.nix ./mongo.nix ];
+  imports = [ ./social.nix ./browser.nix ./office.nix ];
 
   nixpkgs.config.packageOverrides = super: {
     keeweb = pkgs.callPackage ./custom/KeeWeb { };
