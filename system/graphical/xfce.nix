@@ -8,12 +8,10 @@
     };
     displayManager = {
       autoLogin = {
-	enable = true;
-	user = "kirill";
+        enable = true;
+        user = "kirill";
       };
-      lightdm = {
-      	enable = true;
-      };
+      lightdm = { enable = true; };
     };
   };
   networking.networkmanager.enable = true;

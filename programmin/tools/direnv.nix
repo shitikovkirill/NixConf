@@ -23,9 +23,7 @@
     keep-outputs = true
     keep-derivations = true
   '';
-  environment.pathsToLink = [
-    "/share/nix-direnv"
-  ];
+  environment.pathsToLink = [ "/share/nix-direnv" ];
 
   home-manager.users.kirill = {
     home.file.".direnvrc".source = ./dotfiles/direnv/direnvrc;
