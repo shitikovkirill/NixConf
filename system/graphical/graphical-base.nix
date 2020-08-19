@@ -15,5 +15,4 @@ with lib;
   powerManagement.enable = true;
 
   environment.systemPackages = with pkgs; [ vim firefox ];
-
 }

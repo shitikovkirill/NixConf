@@ -7,8 +7,8 @@
     ./envvar.nix
     ./aliases.nix
     ./network.nix
-    ./graphical/kde.nix
+    ./graphical/xfce.nix
     ./devises
-    ./kvm.nix
+    # ./kvm.nix
   ];
 }

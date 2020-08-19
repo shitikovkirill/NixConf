@@ -10,14 +10,11 @@ in {
   };
 
   imports = [
-    "${
-      builtins.fetchTarball
-      "https://github.com/rycee/home-manager/archive/release-19.09.tar.gz"
-    }/nixos"
+    (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
     ./system
     ./pkgs
     ./tools
     ./programmin
-    # ./containers
+    ./containers
   ];
 }

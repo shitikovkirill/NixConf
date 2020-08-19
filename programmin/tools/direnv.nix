@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ direnv ];
+  environment.systemPackages = with pkgs; [ direnv nix-direnv ];
 
   programs = {
-    bash.shellInit = ''
+    bash.interactiveShellInit = ''
       if [ -x "$(command -v direnv)" ]; then
           eval "$(direnv hook bash)"
       fi
@@ -17,6 +17,15 @@
       '';
     };
   };
+
+  # nix options for derivations to persist garbage collection
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
+  environment.pathsToLink = [
+    "/share/nix-direnv"
+  ];
 
   home-manager.users.kirill = {
     home.file.".direnvrc".source = ./dotfiles/direnv/direnvrc;
