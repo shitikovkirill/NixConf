@@ -10,6 +10,7 @@ in {
       "jupyter.server"
       "rabbitmq.server"
       "db.server"
+      "hydra.server"
     ];
   }) // hosts;
 }

@@ -14,6 +14,9 @@ in {
     nix-index
     nixfmt
     nix-prefetch-git
+    nixops
+    niv
+    nixFlakes
 
     (pkgs.vim_configurable.customize {
       name = "vim";

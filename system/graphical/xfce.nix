@@ -4,7 +4,7 @@
     enable = true;
     desktopManager = {
       xfce.enable = true;
-      xfce.thunarPlugins = [ pkgs.xfce.thunar-archive-plugin ];
+      xfce.thunarPlugins = with pkgs.xfce; [ thunar-archive-plugin thunar-dropbox-plugin thunar-volman ];
     };
     displayManager = {
       autoLogin = {
@@ -16,6 +16,7 @@
   };
   networking.networkmanager.enable = true;
   hardware.acpilight.enable = true;
+  services.blueman.enable = true;
 
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
