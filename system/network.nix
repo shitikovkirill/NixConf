@@ -11,6 +11,9 @@ in {
       "rabbitmq.server"
       "db.server"
       "hydra.server"
+      "gitlab.server"
+      "pw.server"
+      "elk.server"
     ];
   }) // hosts;
 }
