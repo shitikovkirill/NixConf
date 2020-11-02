@@ -4,7 +4,11 @@
     enable = true;
     desktopManager = {
       xfce.enable = true;
-      xfce.thunarPlugins = with pkgs.xfce; [ thunar-archive-plugin thunar-dropbox-plugin thunar-volman ];
+      xfce.thunarPlugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-dropbox-plugin
+        thunar-volman
+      ];
     };
     displayManager = {
       autoLogin = {

@@ -5,7 +5,5 @@
 
   programs.zsh = { ohMyZsh = { plugins = [ "python" "django" ]; }; };
 
-  environment.shellAliases = {
-    py-clean = ''find -name "*.pyc" -delete'';
-  };
+  environment.shellAliases = { py-clean = ''find -name "*.pyc" -delete''; };
 }

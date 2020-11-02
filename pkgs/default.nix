@@ -11,6 +11,10 @@
     lastpass-cli
 
     keeweb
+
+    tixati
+
+    dropbox-cli
     #stacker
     #composercat
     #graphqlplayground

@@ -7,6 +7,13 @@ let
 in {
   programs.bash.enableCompletion = true;
 
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   environment.systemPackages = with pkgs; [
     niv
     nox
@@ -15,7 +22,6 @@ in {
     nixfmt
     nix-prefetch-git
     nixops
-    niv
     nixFlakes
 
     (pkgs.vim_configurable.customize {

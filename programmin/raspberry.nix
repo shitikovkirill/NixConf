@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    etcher
-  ];
+  environment.systemPackages = with pkgs; [ etcher ];
 }

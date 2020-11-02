@@ -12,5 +12,6 @@
     ./cloud.nix
     ./direnv.nix
     ./nix-tools.nix
+    ./arduino.nix
   ];
 }
