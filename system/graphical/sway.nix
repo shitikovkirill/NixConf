@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
+  networking.networkmanager.enable = true;
+
   services.xserver = {
     enable = true;
     displayManager = {
@@ -23,6 +25,8 @@
     };
 
     extraPackages = with pkgs; [
+      alacritty
+      dmenu
       xwayland
 
       brightnessctl
@@ -30,6 +34,8 @@
       swayidle
       swaylock
       swaybg
+
+      i3status
 
       gebaar-libinput # libinput gestures utility
 
@@ -66,6 +72,18 @@
       systemctl --user import-environment
     '';
   };
+  security.pam.services.swaylock = { };
+
+  environment = {
+    etc = {
+      # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
+      "sway/config".source = ./dotfiles/sway/config;
+      #"xdg/waybar/config".source = ./dotfiles/waybar/config;
+      #"xdg/waybar/style.css".source = ./dotfiles/waybar/style.css;
+    };
+  };
+
+  environment.systemPackages = with pkgs; [ alacritty ];
 
   xdg.portal = {
     enable = true;
