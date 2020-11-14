@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 
-{
+let
+  i3blocks-contrib = import ./pkgs/i3blocks-contrib.nix {pkgs=pkgs;};
+in {
   networking.networkmanager.enable = true;
 
   services.xserver = {
@@ -35,6 +37,7 @@
       swaylock
       swaybg
 
+      i3blocks
       i3status
 
       gebaar-libinput # libinput gestures utility
@@ -78,12 +81,14 @@
     etc = {
       # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
       "sway/config".source = ./dotfiles/sway/config;
+      "xdg/i3blocks/config".source = ./dotfiles/i3blocks/config;
+      "xdg/i3blocks/blocks".source = i3blocks-contrib;
       #"xdg/waybar/config".source = ./dotfiles/waybar/config;
       #"xdg/waybar/style.css".source = ./dotfiles/waybar/style.css;
     };
   };
 
-  environment.systemPackages = with pkgs; [ alacritty ];
+  environment.systemPackages = with pkgs; [ alacritty iw acpi ];
 
   xdg.portal = {
     enable = true;

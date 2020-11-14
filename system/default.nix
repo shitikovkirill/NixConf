@@ -7,7 +7,7 @@
     ./envvar.nix
     ./aliases.nix
     ./network.nix
-    ./graphical/sway.nix
+    ./graphical/sway
     ./devises
     # ./kvm.nix
   ];
