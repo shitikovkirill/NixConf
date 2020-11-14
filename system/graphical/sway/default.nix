@@ -37,6 +37,8 @@ in {
       swaylock
       swaybg
 
+      xkb-switch
+
       i3blocks
       i3status
 
@@ -88,7 +90,7 @@ in {
     };
   };
 
-  environment.systemPackages = with pkgs; [ alacritty iw acpi ];
+  environment.systemPackages = with pkgs; [ alacritty iw acpi xkb-switch networkmanager_dmenu ];
 
   xdg.portal = {
     enable = true;

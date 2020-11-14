@@ -71,14 +71,18 @@ color=#00FF00
 interval=10
 separator=false
 
-[wifi]
-INTERFACE=wlp3s0
-label=wifi:
-interval=10
-separator=false
-
 [load_average]
 label=LOAD
+interval=10
+
+[click]
+full_text=🌐
+command=networkmanager_dmenu
+color=#F79494
+separator=false
+
+[wifi]
+INTERFACE=wlp3s0
 interval=10
 
 # Battery indicator
@@ -89,10 +93,12 @@ label=⚡
 interval=30
 instance=1
 
-[key_layout]
-command=setxkbmap -query | grep layout | grep -o '..$'
+[xkb_layout]
 label=🏳
-interval=30
+font=monospace
+font_weight=bold
+interval=persist
+markup=pango
 
 # Date Time
 #
