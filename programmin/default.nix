@@ -11,6 +11,7 @@
 
   imports = [
     ./tools
+    ./bash.nix
     ./go.nix
     ./python.nix
     ./js.nix

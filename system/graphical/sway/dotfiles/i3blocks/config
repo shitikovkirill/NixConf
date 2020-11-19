@@ -29,6 +29,15 @@ command=/etc/xdg/i3blocks/blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[brightness]
+command=bash /etc/xdg/i3blocks/brightness
+label=💡
+interval=once
+#STEP=100
+#MIN=100
+INTERFACE=intel_backlight
+
+
 [docker]
 color=#0db7ed
 interval=10
@@ -45,7 +54,7 @@ label=♪
 #label=VOL
 interval=once
 signal=10
-#STEP=5%
+#LSTEP=5%
 
 # Memory usage
 #
@@ -75,10 +84,9 @@ separator=false
 label=LOAD
 interval=10
 
-[click]
+[networkmanager]
 full_text=🌐
 command=networkmanager_dmenu
-color=#F79494
 separator=false
 
 [wifi]
@@ -105,3 +113,8 @@ markup=pango
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
+
+[shutdown]
+full_text=⏼
+command=shutdown now
+color=#eb4034

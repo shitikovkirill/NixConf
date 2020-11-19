@@ -1,0 +1,35 @@
+if [[ -z "$STEP" ]] ; then
+    INTERFACE="intel_backlight"
+fi
+
+if [[ -z "$STEP" ]] ; then
+    STEP="${1:-100}"
+fi
+
+if [[ -z "$MIN" ]] ; then
+    MIN="${1:-100}"
+fi
+
+CURRENT=$(brightnessctl g $INTERFACE)
+MAX=$(brightnessctl m $INTERFACE)
+REZ=$CURRENT
+
+case $BLOCK_BUTTON in
+  4)
+    if [[ CURRENT -lt MAX ]] ; then
+        REZ=$((CURRENT+STEP))
+        brightnessctl -d $INTERFACE set $REZ > /dev/null
+    fi
+    ;;
+  5)
+    if [[ CURRENT -gt MIN ]] ; then
+        REZ=$((CURRENT-STEP))
+        brightnessctl -d $INTERFACE set $REZ > /dev/null
+    fi
+    ;;
+esac
+
+echo $((REZ*100/MAX))
+#echo $REZ
+#echo $MAX
+#echo $MIN
