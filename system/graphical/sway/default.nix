@@ -61,6 +61,8 @@ in {
 
       # TODO: more steps required to use this?
       xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
+
+      jq
     ];
 
     extraSessionCommands = ''
@@ -84,11 +86,10 @@ in {
     etc = {
       # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
       "sway/config".source = ./dotfiles/sway/config;
-      #"xdg/i3blocks/config".source = ./dotfiles/i3blocks/config;
-      #"xdg/i3blocks/blocks".source = i3blocks-contrib;
-      #"xdg/i3blocks/brightness".source = ./dotfiles/i3blocks/brightness;
-      #"xdg/waybar/config".source = ./dotfiles/waybar/config;
-      #"xdg/waybar/style.css".source = ./dotfiles/waybar/style.css;
+      "xdg/i3blocks/config".source = ./dotfiles/i3blocks/config;
+      "xdg/i3blocks/blocks".source = i3blocks-contrib;
+      "xdg/i3blocks/brightness".source = ./dotfiles/i3blocks/brightness;
+      "xdg/waybar".source = ./dotfiles/waybar;
     };
   };
 
@@ -100,6 +101,7 @@ in {
     networkmanager_dmenu
     blueberry
     xfce.thunar
+    jq
   ];
 
   xdg.portal = {
@@ -107,11 +109,14 @@ in {
     extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
     gtkUsePortal = true;
   };
+
+  programs.waybar.enable = true;
   services.pipewire.enable = true;
 
-  fonts.fonts = with pkgs; [ font-awesome source-code-pro ];
+  fonts.fonts = with pkgs; [ font-awesome source-code-pro iosevka ];
 
   home-manager.users.kirill = {
-    home.file.".config/alacritty/alacritty.yml".source = ./dotfiles/alacritty.yml;
+    home.file.".config/alacritty/alacritty.yml".source =
+      ./dotfiles/alacritty.yml;
   };
 }
