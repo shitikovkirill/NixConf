@@ -139,7 +139,6 @@ markup=pango
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
 
-[shutdown]
+[shutdown_menu]
 full_text=⏼
-command=shutdown now
 color=#eb4034
