@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    firefox-wayland
+    # firefox-wayland
     chromium
     w3m
     filezilla

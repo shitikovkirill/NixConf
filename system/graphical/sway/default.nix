@@ -29,7 +29,7 @@ in {
       alacritty
       xfce.thunar
 
-      # dmenu
+      dmenu
       xwayland
 
       brightnessctl
@@ -102,6 +102,7 @@ in {
     blueberry
     xfce.thunar
     jq
+    sysstat
   ];
 
   xdg.portal = {

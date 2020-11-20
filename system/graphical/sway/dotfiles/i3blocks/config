@@ -29,6 +29,22 @@ command=/etc/xdg/i3blocks/blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[sway-focusedwindow]
+interval=persist
+
+[timer_and_stopwatch]
+# the DEFAULT_MODE variable must be either timer or stopwatch
+format=json
+interval=1
+TIMER_LABEL=⌛
+STOPWATCH_LABEL=⏰
+DEFAULT_MODE=stopwatch
+#DEFAULT_STOPWATCH=0
+#DEFAULT_TIMER=60
+PLAY_LABEL=⏸
+PAUSE_LABEL=▶
+TIMER_LOOP=true
+
 [brightness]
 command=bash /etc/xdg/i3blocks/brightness
 label=💡
@@ -60,12 +76,12 @@ signal=10
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=🐏
 separator=false
 interval=30
 
 [memory]
-label=SWAP
+label=🐕
 instance=swap
 separator=false
 interval=30
@@ -81,8 +97,17 @@ interval=10
 separator=false
 
 [load_average]
-label=LOAD
+label=🐃
 interval=10
+separator=false
+
+[cpu_usage]
+interval=10
+LABEL=🐀
+min_width=🐀100.00%
+#T_WARN=50
+#T_CRIT=80
+#DECIMALS=2
 
 [networkmanager]
 full_text=🌐
