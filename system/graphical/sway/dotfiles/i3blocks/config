@@ -58,6 +58,16 @@ INTERFACE=intel_backlight
 color=#0db7ed
 interval=10
 LABEL=🐳
+separator=false
+
+[systemd_unit]
+markup=pango
+interval=30
+UNIT_NAME=docker.service
+USER_UNIT=false
+ACTIVE_COLOR=green
+INACTIVE_COLOR=orange
+FAILED_COLOR=red
 
 # Volume indicator
 #
@@ -108,6 +118,14 @@ min_width=🐀100.00%
 #T_WARN=50
 #T_CRIT=80
 #DECIMALS=2
+separator=false
+
+[temperature]
+label=🐣
+interval=10
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
 
 [networkmanager]
 full_text=🌐
@@ -139,6 +157,7 @@ markup=pango
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
 
-[shutdown_menu]
+[shutdown]
 full_text=⏼
+command=shutdown now
 color=#eb4034

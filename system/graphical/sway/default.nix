@@ -34,6 +34,7 @@ in {
       xwayland
 
       brightnessctl
+      lm_sensors
 
       swayidle
       swaylock
