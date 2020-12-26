@@ -18,17 +18,17 @@ with lib;
 
   environment.systemPackages = with pkgs; [
     ark
-    kdeApplications.baloo-widgets
-    kdeApplications.dolphin-plugins
-    kdeApplications.grantleetheme
-    kdeApplications.kalarm
-    kdeApplications.kalarmcal
-    kdeApplications.kget
-    kdeApplications.kmail
-    kdeApplications.ksystemlog
-    kdeApplications.krfb
-    kdeApplications.okular
-    kdeApplications.spectacle
+    #kdeApplications.baloo-widgets
+    #kdeApplications.dolphin-plugins
+    #kdeApplications.grantleetheme
+    #kdeApplications.kalarm
+    #kdeApplications.kalarmcal
+    #kdeApplications.kget
+    #kdeApplications.kmail
+    #kdeApplications.ksystemlog
+    #kdeApplications.krfb
+    #kdeApplications.okular
+    #kdeApplications.spectacle
     kcachegrind
     # ktorrent
     dragon

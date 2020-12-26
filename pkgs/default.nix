@@ -10,7 +10,7 @@
 
     lastpass-cli
 
-    keeweb
+    #keeweb
 
     tixati
 
