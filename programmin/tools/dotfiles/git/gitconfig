@@ -1,6 +1,6 @@
 [user]
 	name = Shitikov Kirill
-	email = sh.kiruh@gmail.com
+	email = k.shitikov@itransition.com
 [credential]
     helper = cache --timeout=3600
 [core]
