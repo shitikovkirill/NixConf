@@ -9,3 +9,4 @@ not_in_git*
 .envrc
 profile.nix
 result
+venv
