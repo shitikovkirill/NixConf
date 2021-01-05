@@ -12,7 +12,7 @@
     programs.git = {
       enable = true;
       userName = "Shitikov Kirill";
-      userEmail = "sh.kiruh@gmail.com";
+      userEmail = "k.shitikov@itransition.com"; #"sh.kiruh@gmail.com";
       extraConfig = {
         push = { default = "current"; };
         apply = { whitespace = "nowarn"; };
