@@ -3,4 +3,3 @@
 {
   environment.systemPackages = with pkgs; [ tdesktop discord zoom-us skypeforlinux ];
 }
-skypeforlinux
