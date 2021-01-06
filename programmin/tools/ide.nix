@@ -9,6 +9,7 @@
     #brackets
     vscode
     #soapui
+    postman
   ];
 
   imports = [ ./jetbrains.nix ];
