@@ -36,5 +36,5 @@ in {
 
   services.lorri.enable = true;
   programs.zsh.shellInit = hInit;
-  programs.bash.shellInit = hInit;
+  programs.bash.interactiveShellInit = hInit;
 }
