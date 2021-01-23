@@ -11,6 +11,8 @@
 	ui = true
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[url "ssh://gitlab@gitlab.server/"]
+	insteadOf = http://gitlab.server/
 [url "ssh://git@lab.thinkglobal.space/"]
 	insteadOf = https://lab.thinkglobal.space/
 [alias]

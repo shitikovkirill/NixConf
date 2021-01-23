@@ -9,6 +9,6 @@
     ./network.nix
     ./graphical/load-graphic.nix
     ./devises
-    # ./kvm.nix
+    ./kvm.nix
   ];
 }
