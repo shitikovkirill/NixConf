@@ -6,28 +6,14 @@ let
   dynamic-linker = pkgs.stdenv.cc.bintools.dynamicLinker;
 
   description = "Free cross-platform password manager compatible with KeePass ";
-  desktopItem = pkgs.makeDesktopItem {
-    name = "KeeWeb";
-    exec = "keeweb";
-    icon = "keeweb";
-    comment = description;
-    desktopName = "Keep passwords";
-    categories = "Office";
-  };
 
 in pkgs.stdenv.mkDerivation rec {
   name = "keeweb";
 
   src = pkgs.fetchurl {
     url =
-      "https://github.com/keeweb/keeweb/releases/download/v1.8.2/KeeWeb-1.8.2.linux.x64.deb";
-    sha256 = "17frvq4hzybxpczpjv93m1fvs0q0wxprw30kvwps5zhrxf8wmp3y";
-  };
-
-  icon = pkgs.fetchurl {
-    url =
-      "https://raw.githubusercontent.com/keeweb/keeweb/master/desktop/icon.png";
-    sha256 = "a0c03adaf79ad7d9af53447cac3746d687daf9a8ce19de7e4d92dc36d1d474a9";
+      "https://github.com/keeweb/keeweb/releases/download/v1.14.2/KeeWeb-1.14.2.linux.x64.deb";
+    sha256 = "1806yg1p3ppf59nyw2z7vc7xm227smi11s3gsqmfwbyn9x9zksxh";
   };
 
   phases = "unpackPhase fixupPhase";
@@ -36,11 +22,9 @@ in pkgs.stdenv.mkDerivation rec {
 
   unpackPhase = ''
     mkdir -p ${targetPath}
-    ${dpkg}/bin/dpkg -x $src ${targetPath}
-
-    mkdir -p $out/share/{applications,icons/hicolor/scalable/apps}
-    ln -s $icon $out/share/icons/hicolor/scalable/apps/keeweb.png
-    cp ${desktopItem}/share/applications/* $out/share/applications
+    ${dpkg}/bin/dpkg --fsys-tarfile $src | tar xf -
+    rm usr/bin/*
+    cp -r usr/* ${targetPath}
   '';
 
   packages = with pkgs; [ at-spi2-atk utillinux ];
@@ -51,8 +35,11 @@ in pkgs.stdenv.mkDerivation rec {
 
   rpath = with pkgs;
     lib.concatStringsSep ":" [
-      atomEnv.libPath
-      "${targetPath}/opt/keeweb-desktop/"
+      "${mesa}/lib/"
+      "${libdrm}/lib/"
+      "${libxkbcommon}/lib/"
+      "${atomEnv.libPath}"
+      "${targetPath}/share/keeweb-desktop/"
       libPath
     ];
 
@@ -60,10 +47,11 @@ in pkgs.stdenv.mkDerivation rec {
     patchelf \
     --set-interpreter "${dynamic-linker}" \
     --set-rpath "${rpath}" \
-    ${targetPath}/opt/keeweb-desktop/KeeWeb
+    ${targetPath}/share/keeweb-desktop/keeweb
 
-    mkdir -p $out/bin
-    ln -s ${targetPath}/opt/keeweb-desktop/KeeWeb $out/bin/keeweb
+    echo ${rpath}
+
+     ln -s ${targetPath}/share/keeweb-desktop/keeweb $out/bin/keeweb
   '';
 
   meta = with stdenv.lib; {
