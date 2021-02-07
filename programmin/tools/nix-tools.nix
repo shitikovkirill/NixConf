@@ -7,9 +7,7 @@ let
 in {
   programs.bash.enableCompletion = true;
 
-  nix = {
-    package = pkgs.nixUnstable;
-  };
+  nix = { package = pkgs.nixUnstable; };
 
   environment.systemPackages = with pkgs; [
     niv

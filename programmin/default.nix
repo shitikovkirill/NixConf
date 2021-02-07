@@ -13,7 +13,7 @@
     ./tools
     ./bash.nix
     ./go.nix
-    ./python.nix
+    ./python
     ./js.nix
     ./raspberry.nix
     #./php.nix

@@ -17,7 +17,7 @@
     enable = true;
     enableOnBoot = false;
   };
-  
+
   users.users.kirill.extraGroups = [ "docker" ];
 
   programs.zsh = { ohMyZsh = { plugins = [ "docker" "docker-compose" ]; }; };
