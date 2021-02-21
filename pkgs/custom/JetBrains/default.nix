@@ -1,14 +1,14 @@
 with import <nixpkgs> { };
 
 let
-  appName = "reset_trail";
+  appName = "JetBrainsResetTrail";
   description = "Reset IDE";
 
   reset = name:
-    pkgs.writeShellScriptBin "reset-${name}" ''
+    writeShellScriptBin "reset-${name}" ''
       echo "Removing evaluation key for ${name}"
       rm -rf ~/.config/JetBrains/${name}*/eval
-      rm -rf ~/.java/.userPrefs/jetbrains/${pkgs.lib.strings.toLower name}
+      rm -rf ~/.java/.userPrefs/jetbrains/${lib.strings.toLower name}
 
       echo "Resetting evalsprt in options.xml for ${name}"
       sed -i '/evlsprt/d' ~/.config/JetBrains/${name}*/options/other.xml
@@ -20,10 +20,10 @@ let
       find ~/.config/JetBrains/${name}* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
       find ~/.config/JetBrains/${name}* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
 
-      ${pkgs.cowsay}/bin/cowsay "Done"
+      ${cowsay}/bin/cowsay "Done"
     '';
 
-in pkgs.stdenv.mkDerivation rec {
+in mkShell rec {
   name = appName;
 
   buildInputs = [
@@ -33,10 +33,10 @@ in pkgs.stdenv.mkDerivation rec {
     (reset "RubyMine")
     (reset "PhpStorm")
     (reset "GoLand")
-    pkgs.cowsay
+    cowsay
   ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     inherit description;
     license = licenses.agpl3;
     platforms = platforms.linux;
