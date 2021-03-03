@@ -2,11 +2,13 @@
 	name = Shitikov Kirill
 	email = k.shitikov@itransition.com
 [credential]
-    helper = cache --timeout=3600
+  helper = cache --timeout=3600
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
 	editor = nano
+[pull]
+	rebase = false
 [color]
 	ui = true
 [url "ssh://git@github.com/"]

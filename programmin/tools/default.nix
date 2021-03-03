@@ -6,7 +6,7 @@
     ./git.nix
     ./docker.nix
     ./ide.nix
-    # ./vagrant.nix
+    ./vagrant.nix
     # ./vagga.nix
     ./bash.nix
     ./cloud.nix
