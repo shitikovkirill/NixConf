@@ -11,6 +11,8 @@
   ];
 
   home-manager.users.kirill = {
+    home.file.".gitignore".source = ./dotfiles/git/gitignore;
+
     programs.git = {
       enable = true;
       userName = "Shitikov Kirill";
@@ -20,6 +22,7 @@
         apply = { whitespace = "nowarn"; };
         core = {
           autocrlf = "input";
+          excludesfile = "~/.gitignore";
           editor = "nano";
         };
         credential = { helper = "cache --timeout=3600"; };
@@ -54,8 +57,7 @@
         br = "branch";
         co = "commit";
         st = "status";
-        hist =
-          "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short";
+        hist = "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short";
         fhist = "log --follow -p --";
         unstage = "reset HEAD --";
         last = "log -1 HEAD";
