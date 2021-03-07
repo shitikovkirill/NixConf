@@ -1,9 +1,7 @@
 {
   system.stateVersion = "unstable";
 
-  nixpkgs.config.permittedInsecurePackages = [
-     "libvirt-5.9.0"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "libvirt-5.9.0" ];
 
   imports = [
     ./sudoers.nix

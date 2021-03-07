@@ -26,13 +26,13 @@ with import <nixpkgs> { };
   myPythonPackages = python38Packages.override {
     overrides = self: super: {
       cookiecutter = super.cookiecutter.overrideAttrs (oldAttrs: rec {
-          version = "1.7.0";
-          src = python38.pkgs.fetchPypi {
-            pname = oldAttrs.pname;
-            inherit version;
-            sha256 = "1bh4vf45q9nanmgwnw7m0gxirndih9yyz5s0y2xbnlbcqbhrg6a7";
-          };
-        });
+        version = "1.7.0";
+        src = python38.pkgs.fetchPypi {
+          pname = oldAttrs.pname;
+          inherit version;
+          sha256 = "1bh4vf45q9nanmgwnw7m0gxirndih9yyz5s0y2xbnlbcqbhrg6a7";
+        };
+      });
     };
   };
 
