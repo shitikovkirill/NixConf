@@ -38,20 +38,6 @@
           };
         };
       };
-      ignores = [
-        ".idea"
-        ".vagrant"
-        ".directory"
-        "access.log"
-        "error.log"
-        "id_rsa"
-        "not_in_git*"
-        ".direnv"
-        ".envrc"
-        "profile.nix"
-        "result"
-        "venv*"
-      ];
       aliases = {
         ct = "checkout";
         br = "branch";
