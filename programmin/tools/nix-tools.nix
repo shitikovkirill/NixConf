@@ -16,7 +16,7 @@ in {
     nix-index
     nixfmt
     nix-prefetch-git
-    nixops
+    # nixops
     nixFlakes
 
     (pkgs.vim_configurable.customize {
