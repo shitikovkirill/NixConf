@@ -30,6 +30,9 @@
         color = { ui = true; };
         url = {
           "ssh://git@github.com/" = { insteadOf = "https://github.com/"; };
+          "ssh://git@gitlab.com/" = {
+            insteadOf = "https://gitlab.com/";
+          };
           "ssh://gitlab@gitlab.server/" = {
             insteadOf = "http://gitlab.server/";
           };
