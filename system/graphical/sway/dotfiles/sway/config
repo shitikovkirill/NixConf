@@ -225,4 +225,4 @@ input * {
 
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
 exec mako
-font pango:SourceCodePro Medium 11
+font pango:SourceCodePro Medium 14
