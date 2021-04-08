@@ -18,6 +18,16 @@ nix-profile() {
   load_prefix "$profile"
 }
 
+use_nvm() {
+  local node_version=$1
+
+  nvm_sh=~/.nvm/nvm.sh
+  if [[ -e $nvm_sh ]]; then
+    source $nvm_sh
+    nvm use $node_version
+  fi
+}
+
 # Usage: layout golang
 #
 # Sets up environment for a Go project using the alternative gb build tool. Also
