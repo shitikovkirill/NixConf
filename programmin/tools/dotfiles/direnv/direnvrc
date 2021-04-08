@@ -19,13 +19,15 @@ nix-profile() {
 }
 
 use_nvm() {
-  local node_version=$1
-
-  nvm_sh=~/.nvm/nvm.sh
-  if [[ -e $nvm_sh ]]; then
-    source $nvm_sh
-    nvm use $node_version
+  watch_file .nvmrc
+  local NVM_PATH="$HOME/.nvm/nvm.sh"
+  if ! [ -f "$NVM_PATH" ]; then
+    echo "Installing NVM" >&2
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
   fi
+  . "${NVM_PATH}"
+  nvm install
+  layout node
 }
 
 # Usage: layout golang
