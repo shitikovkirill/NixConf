@@ -13,6 +13,6 @@
     ./direnv.nix
     ./nix-tools.nix
     ./arduino.nix
-    ./devpi.nix
+    #./devpi.nix
   ];
 }

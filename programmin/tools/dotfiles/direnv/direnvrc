@@ -18,18 +18,6 @@ nix-profile() {
   load_prefix "$profile"
 }
 
-use_nvm() {
-  watch_file .nvmrc
-  local NVM_PATH="$HOME/.nvm/nvm.sh"
-  if ! [ -f "$NVM_PATH" ]; then
-    echo "Installing NVM" >&2
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-  fi
-  . "${NVM_PATH}"
-  nvm install
-  layout node
-}
-
 # Usage: layout golang
 #
 # Sets up environment for a Go project using the alternative gb build tool. Also
