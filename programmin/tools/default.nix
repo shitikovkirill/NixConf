@@ -6,13 +6,13 @@
     ./git.nix
     ./docker.nix
     ./ide.nix
-    ./vagrant.nix
-    # ./vagga.nix
+    #./vagrant.nix
+    #./vagga.nix
     ./bash.nix
-    ./cloud.nix
+    #./cloud.nix
     ./direnv.nix
     ./nix-tools.nix
-    ./arduino.nix
+    #./arduino.nix
     #./devpi.nix
   ];
 }
