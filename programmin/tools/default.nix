@@ -14,5 +14,6 @@
     ./nix-tools.nix
     #./arduino.nix
     #./devpi.nix
+    ./network.nix
   ];
 }

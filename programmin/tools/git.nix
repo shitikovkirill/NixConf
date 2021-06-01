@@ -33,11 +33,17 @@
           "ssh://git@gitlab.com/" = {
             insteadOf = "https://gitlab.com/";
           };
+          "ssh://git@gitlab.pw/" = {
+            insteadOf = "https://gitlab.pw/";
+          };
           "ssh://gitlab@gitlab.server/" = {
             insteadOf = "http://gitlab.server/";
           };
           "ssh://git@lab.thinkglobal.space/" = {
             insteadOf = "https://lab.thinkglobal.space/";
+          };
+          "ssh://gitlab@gitlab.thinkglobal.space/" = {
+            insteadOf = "https://gitlab.thinkglobal.space/";
           };
         };
       };

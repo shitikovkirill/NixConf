@@ -6,5 +6,6 @@
     discord
     zoom-us
     skypeforlinux
+    slack
   ];
 }
