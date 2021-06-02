@@ -7,5 +7,6 @@
     zoom-us
     skypeforlinux
     slack
+    teams
   ];
 }
