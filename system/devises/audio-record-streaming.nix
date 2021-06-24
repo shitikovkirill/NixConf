@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
 let
-runStreamScript = pkgs.writeShellScriptBin "run-stream-script"
-  ''
+  runStreamScript = pkgs.writeShellScriptBin "run-stream-script" ''
     DEFAULT_OUTPUT=$(pacmd list-sinks | grep -A1 '* index' | grep -oP '<\K[^ >]+')
     # Check that record-n-play not loadad
     if ! pactl list | grep "record-n-play"; then
@@ -25,9 +24,7 @@ in {
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    pavucontrol lame paprefs
-  ];
+  environment.systemPackages = with pkgs; [ pavucontrol lame paprefs ];
 
   environment.shellAliases = {
     run-stream = "${runStreamScript}/bin/run-stream-script";

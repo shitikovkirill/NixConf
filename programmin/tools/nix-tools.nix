@@ -32,4 +32,8 @@ in {
   services.lorri.enable = true;
   programs.zsh.shellInit = hInit;
   programs.bash.interactiveShellInit = hInit;
+
+  environment.shellAliases = {
+    nixfmt_this = "find . -print -name '*.nix' -exec nixfmt {} \\;";
+  };
 }

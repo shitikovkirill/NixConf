@@ -3,8 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     tdesktop
-    #discord
-    #zoom-us
+    discord
+    zoom-us
     skypeforlinux
     slack
     #teams
