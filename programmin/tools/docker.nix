@@ -6,7 +6,7 @@
     #arion
     #ctop
     docker-compose
-    docker-machine
+    #docker-machine
 
     #minikube
     kubectl
@@ -16,6 +16,7 @@
   virtualisation.docker = {
     enable = true;
     enableOnBoot = false;
+    extraOptions = "-H=tcp://0.0.0.0:5555";
   };
 
   users.users.kirill.extraGroups = [ "docker" ];
@@ -32,7 +33,9 @@
       "docker stop $(docker ps -a -q) & docker update --restart=no $(docker ps -a -q) & systemctl restart docker";
     dnorestart = "docker update --restart=no $(docker ps -aq)";
     dhist = "docker history --no-trunc";
-    dlint = "docker run --rm -i hadolint/hadolint";
+    dlint = "docker run --rm -i hadolint/hadol  environment.systemPackages = with pkgs; [ 
+    python3
+  ];int";
     dlint-deb =
       "docker run -v $(pwd):/app:ro --workdir=/app --rm -i hadolint/hadolint:latest-debian hadolint";
     dpoetry =

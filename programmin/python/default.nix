@@ -1,5 +1,7 @@
 { config, pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ python3 winpdb ];
+  environment.systemPackages = with pkgs; [ 
+    python3
+  ];
 
   programs.zsh = { ohMyZsh = { plugins = [ "python" "django" ]; }; };
 
