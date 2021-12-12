@@ -16,7 +16,7 @@
     programs.git = {
       enable = true;
       userName = "Shitikov Kirill";
-      userEmail = "k.shitikov@itransition.com";
+      userEmail = "kirill.shitikov@powow.ai";
       extraConfig = {
         push = { default = "current"; };
         apply = { whitespace = "nowarn"; };

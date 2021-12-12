@@ -10,5 +10,8 @@ in {
     DIGITAL_OCEAN_AUTH_TOKEN = secrets.digital_ocean;
     DOCKER_ID_USER = "kennykwey";
     PATH = "~/.npm-packages/bin:~/.config/composer/vendor/bin/:$PATH";
+    # Need for increase bash history size
+    HISTSIZE = "10000";
+    HISTFILESIZE="10000";
   };
 }
