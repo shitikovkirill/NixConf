@@ -16,7 +16,6 @@
   virtualisation.docker = {
     enable = true;
     enableOnBoot = false;
-    extraOptions = "-H=tcp://0.0.0.0:5555";
   };
 
   users.users.kirill.extraGroups = [ "docker" ];

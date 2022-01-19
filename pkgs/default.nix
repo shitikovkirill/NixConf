@@ -12,7 +12,7 @@
 
     tixati
 
-    dropbox-cli
+    #dropbox-cli
 
     #unetbootin
   ];

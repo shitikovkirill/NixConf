@@ -4,9 +4,10 @@
   environment.systemPackages = with pkgs; [
     tdesktop
     discord
-    zoom-us
-    skypeforlinux
+    #zoom-us
+    #skypeforlinux
     slack
     #teams
+    viber
   ];
 }
