@@ -8,9 +8,9 @@
     zip
     unzip
 
-    lastpass-cli
+    #lastpass-cli
 
-    tixati
+    #tixati
 
     #dropbox-cli
 

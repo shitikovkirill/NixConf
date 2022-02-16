@@ -3,14 +3,14 @@
 {
   environment.systemPackages = with pkgs; [
     vokoscreen
-    vlc
+    # vlc
     youtube-dl
 
-    pciutils
+    # pciutils
   ];
 
   # disable card with bbswitch by default
-  hardware.nvidiaOptimus.disable = true;
+  # hardware.nvidiaOptimus.disable = true;
   # install nvidia drivers in addition to intel one
   hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
 }

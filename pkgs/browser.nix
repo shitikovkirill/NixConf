@@ -6,6 +6,6 @@
     chromium
     w3m
     filezilla
-    opera
+    # opera
   ];
 }
