@@ -4,8 +4,8 @@
   environment.systemPackages = with pkgs; [
     firefox
     chromium
-    w3m
-    filezilla
+    # w3m
+    # filezilla
     # opera
   ];
 }

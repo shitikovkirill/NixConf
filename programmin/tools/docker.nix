@@ -32,7 +32,7 @@
       "docker stop $(docker ps -a -q) & docker update --restart=no $(docker ps -a -q) & systemctl restart docker";
     dnorestart = "docker update --restart=no $(docker ps -aq)";
     dhist = "docker history --no-trunc";
-    dlint = "docker run --rm -i hadolint/hadol  environment.systemPackages = with pkgs; [ 
+    dlint = "docker run --rm -i hadolint/hadol  environment.systemPackages = with pkgs; [
     python3
   ];int";
     dlint-deb =
