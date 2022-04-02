@@ -1,7 +1,7 @@
 {
   imports = [
     # ./zsh.nix
-    ./translate.nix
+    # ./translate.nix
     ./image.nix
   ];
 }
