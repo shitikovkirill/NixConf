@@ -1,0 +1,7 @@
+{ pkgs, prefix, ... }: { 
+    environment.systemPackages = with pkgs; [
+    atom
+    vscode
+  ];
+}
+ 
