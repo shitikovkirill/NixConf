@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     firefox
-    # chromium
+    chromium
     # w3m
     # filezilla
     # opera
