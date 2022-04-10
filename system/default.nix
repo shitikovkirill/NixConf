@@ -1,8 +1,7 @@
 {
   system.stateVersion = "unstable";
 
-  nixpkgs.config.permittedInsecurePackages =
-    [ "electron-12.2.3" ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-12.2.3" ];
   # nixpkgs.config.allowBroken = true;
   programs.dconf.enable = true;
 
@@ -13,6 +12,7 @@
     ./aliases.nix
     ./network.nix
     ./graphical/load-graphic.nix
+    ./load-pkgs.nix
     ./devises
     # ./kvm.nix
   ];

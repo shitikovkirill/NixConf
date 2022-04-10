@@ -1,7 +1,5 @@
 { config, pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ 
-    python3
-  ];
+  environment.systemPackages = with pkgs; [ python3 ];
 
   programs.zsh = { ohMyZsh = { plugins = [ "python" "django" ]; }; };
 

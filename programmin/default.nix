@@ -15,7 +15,7 @@
     ./go.nix
     ./python
     ./js.nix
-    ./raspberry.nix
+    #./raspberry.nix
     #./php.nix
   ];
 }
