@@ -5,7 +5,7 @@
   imports = [
     ./git.nix
     ./docker.nix
-    #./ide.nix
+    ./ide.nix
     #./vagrant.nix
     #./vagga.nix
     ./bash.nix
