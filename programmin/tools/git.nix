@@ -35,7 +35,7 @@
           "ssh://gitlab@gitlab.server/" = {
             insteadOf = "http://gitlab.server/";
           };
-          "ssh://git@lab.thinkglobal.space/" = {
+          "ssh://gitlab@lab.thinkglobal.space/" = {
             insteadOf = "https://lab.thinkglobal.space/";
           };
           "ssh://gitlab@gitlab.thinkglobal.space/" = {
