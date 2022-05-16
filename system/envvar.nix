@@ -12,6 +12,6 @@ in {
     PATH = "~/.npm-packages/bin:~/.config/composer/vendor/bin/:$PATH";
     # Need for increase bash history size
     HISTSIZE = "10000";
-    HISTFILESIZE="10000";
+    HISTFILESIZE = "10000";
   };
 }
