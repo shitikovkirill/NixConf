@@ -1,4 +1,6 @@
 {
   imports =
-    [ ./audio.nix ./video.nix ./bluetooth.nix ./audio-record-streaming.nix ];
+    [ ./audio.nix ./video.nix ./bluetooth.nix
+    #./audio-record-streaming.nix
+   ];
 }

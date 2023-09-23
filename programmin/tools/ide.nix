@@ -10,6 +10,7 @@
     vscode
     #soapui
     postman
+    dbeaver
   ];
 
   imports = [ ./jetbrains.nix ];

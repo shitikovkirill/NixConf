@@ -26,6 +26,9 @@
   environment.pathsToLink = [ "/share/nix-direnv" ];
 
   home-manager.users.kirill = {
-    home.file.".direnvrc".source = ./dotfiles/direnv/direnvrc;
+    home = {
+      #stateVersion = "22.11";
+      file.".direnvrc".source = ./dotfiles/direnv/direnvrc;
+    };
   };
 }

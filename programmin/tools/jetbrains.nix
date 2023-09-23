@@ -2,12 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
-    jetbrains.jdk
+    #jetbrains.jdk
     jetbrains.pycharm-professional
     jetbrains.datagrip
-    jetbrains.goland
-    jetbrains.phpstorm
-    jetbrains.webstorm
-    jetbrains.ruby-mine
+    #jetbrains.goland
+    #jetbrains.phpstorm
+    #jetbrains.webstorm
+    #jetbrains.ruby-mine
   ];
 }

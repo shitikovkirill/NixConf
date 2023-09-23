@@ -4,11 +4,6 @@
     enable = true;
     desktopManager = {
       xfce.enable = true;
-      xfce.thunarPlugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-dropbox-plugin
-        thunar-volman
-      ];
     };
     displayManager = {
       autoLogin = {
@@ -18,6 +13,11 @@
       lightdm = { enable = true; };
     };
   };
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-dropbox-plugin
+    thunar-volman
+  ];
   networking.networkmanager.enable = true;
   hardware.acpilight.enable = true;
   services.blueman.enable = true;
@@ -42,4 +42,3 @@
     xfce.xfce4-dev-tools
   ];
 }
-

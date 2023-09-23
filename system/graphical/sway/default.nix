@@ -119,7 +119,10 @@ in {
   fonts.fonts = with pkgs; [ font-awesome source-code-pro iosevka ];
 
   home-manager.users.kirill = {
-    home.file.".config/alacritty/alacritty.yml".source =
+    home = {
+      #stateVersion = "22.11";
+      file.".config/alacritty/alacritty.yml".source =
       ./dotfiles/alacritty.yml;
+    };
   };
 }

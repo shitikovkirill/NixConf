@@ -8,7 +8,6 @@
     # sudo rfkill unblock bluetooth
   };
   hardware.pulseaudio = {
-    extraModules = [ pkgs.pulseaudio-modules-bt ];
     package = pkgs.pulseaudioFull;
   };
 }

@@ -18,6 +18,9 @@
 
   ### Need for install global pacages to custom dir
   home-manager.users.kirill = {
-    home.file.".npmrc".source = ./tools/dotfiles/npm/npmrc;
+    home = {
+      stateVersion = "18.09";
+      file.".npmrc".source = ./tools/dotfiles/npm/npmrc;
+    };
   };
 }

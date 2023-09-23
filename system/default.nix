@@ -1,7 +1,11 @@
 {
   system.stateVersion = "unstable";
 
-  nixpkgs.config.permittedInsecurePackages = [ "electron-12.2.3" ];
+  nix.extraOptions = ''
+    experimental-features = nix-command
+  '';
+
+  nixpkgs.config.permittedInsecurePackages = [ "electron-12.2.3" "openssl-1.1.1u" "openssl-1.1.1w" ];
   # nixpkgs.config.allowBroken = true;
   programs.dconf.enable = true;
 
@@ -13,7 +17,7 @@
     ./network.nix
     ./graphical/load-graphic.nix
     ./load-pkgs.nix
-    ./devises
+    #./devises
     # ./kvm.nix
   ];
 }

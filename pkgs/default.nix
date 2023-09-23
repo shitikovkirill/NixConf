@@ -2,11 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-    pass
-
     htop
     zip
     unzip
+    # anydesk
 
     #lastpass-cli
 
@@ -17,5 +16,5 @@
     #unetbootin
   ];
 
-  imports = [ ./social.nix ./browser.nix ./office.nix ];
+  imports = [ ./social.nix ./browser.nix ];
 }

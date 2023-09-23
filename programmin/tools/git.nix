@@ -11,7 +11,10 @@
   ];
 
   home-manager.users.kirill = {
-    home.file.".gitignore".source = ./dotfiles/git/gitignore;
+    home = {
+      file.".gitignore".source = ./dotfiles/git/gitignore;
+      #stateVersion = "22.11";
+    };
 
     programs.git = {
       enable = true;
@@ -40,6 +43,9 @@
           };
           "ssh://gitlab@gitlab.thinkglobal.space/" = {
             insteadOf = "https://gitlab.thinkglobal.space/";
+          };
+          "ssh://git@gitlab.evo.dev:" = {
+            insteadOf = "https://gitlab.evo.dev/";
           };
         };
       };

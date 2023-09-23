@@ -12,7 +12,7 @@
   imports = [
     ./tools
     ./bash.nix
-    ./go.nix
+    #./go.nix
     ./python
     ./js.nix
     ./raspberry.nix
