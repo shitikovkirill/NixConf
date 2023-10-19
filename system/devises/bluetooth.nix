@@ -3,11 +3,9 @@
 {
   hardware.bluetooth = {
     enable = true;
-    package = pkgs.bluezFull;
+    package = pkgs.bluez;
     disabledPlugins = [ "sap" ];
     # sudo rfkill unblock bluetooth
   };
-  hardware.pulseaudio = {
-    package = pkgs.pulseaudioFull;
-  };
+  hardware.pulseaudio = { package = pkgs.pulseaudioFull; };
 }

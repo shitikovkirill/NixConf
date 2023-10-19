@@ -5,7 +5,6 @@
     docker
     #arion
     #ctop
-    docker-compose
     #docker-machine
 
     #minikube
@@ -27,6 +26,7 @@
     drimage = "docker rmi $(docker images -q)";
     drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
     drnetwork = "docker network prune";
+    dclearall = "docker system prune -a -f";
     dstopc = "docker stop $(docker ps -aq)";
     dstopc_with_restart_always =
       "docker stop $(docker ps -a -q) & docker update --restart=no $(docker ps -a -q) & systemctl restart docker";

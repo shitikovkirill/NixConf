@@ -121,8 +121,7 @@ in {
   home-manager.users.kirill = {
     home = {
       #stateVersion = "22.11";
-      file.".config/alacritty/alacritty.yml".source =
-      ./dotfiles/alacritty.yml;
+      file.".config/alacritty/alacritty.yml".source = ./dotfiles/alacritty.yml;
     };
   };
 }

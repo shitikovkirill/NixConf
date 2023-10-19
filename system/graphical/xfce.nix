@@ -2,9 +2,7 @@
   # Xfce
   services.xserver = {
     enable = true;
-    desktopManager = {
-      xfce.enable = true;
-    };
+    desktopManager = { xfce.enable = true; };
     displayManager = {
       autoLogin = {
         enable = true;
