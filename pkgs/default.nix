@@ -5,6 +5,9 @@
     htop
     zip
     unzip
+
+    arduino
+    
     # anydesk
 
     #lastpass-cli

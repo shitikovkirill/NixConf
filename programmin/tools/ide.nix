@@ -5,11 +5,11 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    atom
     #brackets
     vscode
     #soapui
-    postman
+    #postman
+    #jmeter
     dbeaver
   ];
 
