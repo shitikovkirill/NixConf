@@ -1,23 +1,18 @@
-{ pkgs, prefix, ... }:
-let
-  secrets = import ./load-secrets.nix;
-  shared = import ./shared.nix;
-in {
-  time.timeZone = "Europe/Kiev";
-  nixpkgs.config = {
-    allowUnfree = true;
-    #allowBroken = true;
-  };
+{ config, lib, pkgs, ... }:
 
+let
+  home-manager = builtins.fetchTarball
+    "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in {
   imports = [
-    (import "${
-        builtins.fetchTarball
-        "https://github.com/nix-community/home-manager/archive/master.tar.gz"
-      }/nixos")
+    (import "${home-manager}/nixos")
+    ./tools
     ./system
     ./pkgs
-    ./tools
-    ./programmin
+    ./development
     ./containers
   ];
+
+  nixpkgs.config.allowUnfree = true;
+  home-manager.users.kirill.home.stateVersion = "23.11";
 }

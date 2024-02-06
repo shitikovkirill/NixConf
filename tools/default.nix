@@ -1,8 +1,10 @@
+{ config, lib, pkgs, ... }:
+
 {
-  imports = [
-    # ./zsh.nix
-    # ./translate.nix
-    ./image.nix
-    ./video.nix
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      # Text editor
+      featherpad
+    ];
 }
+

@@ -3,11 +3,11 @@
 {
   environment.systemPackages = with pkgs; [
     tdesktop
-    discord
+    #discord
     #zoom-us
     #skypeforlinux
     slack
     #teams
-    viber
+    #viber
   ];
 }
