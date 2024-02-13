@@ -1,6 +1,16 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./ide.nix ./git ./direnv ./nix ./h ./docker.nix ./python ./database ];
+  imports = [
+    ./ide.nix
+    ./git
+    ./direnv
+    ./nix
+    ./h
+    ./docker.nix
+    ./python
+    ./database
+    ./electronics.nix
+  ];
 }
 

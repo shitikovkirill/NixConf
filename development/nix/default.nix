@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-containersRm = pkgs.writeShellScriptBin ("containers_rm") ''
+  containersRm = pkgs.writeShellScriptBin ("containers_rm") ''
     CONTAINERS=$(nixos-container list)
     if [ -z "$CONTAINERS" ]
     then
@@ -10,8 +10,7 @@ containersRm = pkgs.writeShellScriptBin ("containers_rm") ''
         echo "You have activ container"
     fi
   '';
-in
-{
+in {
   environment.systemPackages = with pkgs; [
     niv
     nox

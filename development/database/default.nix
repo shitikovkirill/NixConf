@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    dbeaver
-  ];
+  environment.systemPackages = with pkgs; [ dbeaver ];
 }
