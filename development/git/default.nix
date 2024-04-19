@@ -30,6 +30,7 @@
         url = {
           "ssh://git@github.com/" = { insteadOf = "https://github.com/"; };
           "ssh://git@gitlab.com/" = { insteadOf = "https://gitlab.com/"; };
+          "ssh://gitea@git.webwave.work/" = { insteadOf = "https://git.webwave.work/"; };
         };
       };
       aliases = {

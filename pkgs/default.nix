@@ -1,5 +1,5 @@
 { lib, pkgs, ... }:
 
 {
-  imports = [ ./social.nix ./browser.nix ];
+  imports = [ ./social.nix ./browser.nix ./media.nix ];
 }

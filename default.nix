@@ -11,6 +11,7 @@ in {
     ./pkgs
     ./development
     ./containers
+    ./services
   ];
 
   nixpkgs.config.allowUnfree = true;
