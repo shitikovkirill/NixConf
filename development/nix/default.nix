@@ -16,7 +16,7 @@ in {
     nox
     nix-info
     nix-index
-    nixfmt
+    nixfmt-classic
     nix-prefetch-git
     nixFlakes
     containersRm

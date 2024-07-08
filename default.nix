@@ -2,7 +2,7 @@
 
 let
   home-manager = builtins.fetchTarball
-    "https://github.com/nix-community/home-manager/archive/refs/heads/release-23.11.tar.gz";
+    "https://github.com/nix-community/home-manager/archive/refs/heads/release-24.05.tar.gz";
 in {
   imports = [
     (import "${home-manager}/nixos")
