@@ -4,3 +4,4 @@ secrets.nix
 containers/local
 !containers/local/containers.nix.example
 system/local
+system/network/hosts.nix
