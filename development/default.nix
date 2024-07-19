@@ -9,6 +9,7 @@
     ./h
     ./docker.nix
     ./python
+    ./go.nix
     ./database
     ./electronics.nix
   ];
