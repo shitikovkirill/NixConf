@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./tools
     ./ide.nix
     ./git
     ./direnv
@@ -11,6 +12,7 @@
     ./python
     ./database
     ./electronics.nix
+    ./bash.nix
   ];
 }
 
