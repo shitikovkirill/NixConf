@@ -6,4 +6,8 @@
       bruno
       xmind
     ];
+
+    imports = [
+      ./jetbrains.nix
+    ];
 }
