@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./tools
     ./ide.nix
     ./git
     ./direnv
@@ -12,6 +13,7 @@
     ./go.nix
     ./database
     ./electronics.nix
+    ./bash.nix
   ];
 }
 
