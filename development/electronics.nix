@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ arduino ];
+  environment.systemPackages = with pkgs; [ arduino rpi-imager ];
 }
