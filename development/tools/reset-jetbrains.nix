@@ -1,9 +1,6 @@
-with import <nixpkgs> { };
+{ writeShellScriptBin }:
 
-let
-  appName = "JetBrainsResetTrail";
-  description = "Reset IDE";
-
+{
   reset = name:
     writeShellScriptBin "reset-${name}" ''
       echo "Removing evaluation key for ${name}"
@@ -19,26 +16,6 @@ let
       find ~/.config/JetBrains/${name}* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
       find ~/.config/JetBrains/${name}* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
 
-      ${cowsay}/bin/cowsay "Done"
+      echo "Done"
     '';
-
-in mkShell rec {
-  name = appName;
-
-  buildInputs = [
-    (reset "WebStorm")
-    (reset "DataGrip")
-    (reset "PyCharm")
-    (reset "RubyMine")
-    (reset "PhpStorm")
-    (reset "GoLand")
-    cowsay
-  ];
-
-  meta = with lib; {
-    inherit description;
-    license = licenses.lgpl3;
-    platforms = platforms.linux;
-    maintainers = with maintainers; [ shitikovkirill ];
-  };
 }
