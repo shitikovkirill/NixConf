@@ -5,8 +5,6 @@
     jetbrains.pycharm-professional
     jetbrains.datagrip
     jetbrains.goland
-    #jetbrains.phpstorm
-    #jetbrains.webstorm
-    #jetbrains.ruby-mine
+    jetbrains.webstorm
   ];
 }

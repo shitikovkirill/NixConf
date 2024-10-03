@@ -38,7 +38,7 @@ in mkShell rec {
 
   meta = with lib; {
     inherit description;
-    license = licenses.agpl3;
+    license = licenses.lgpl3;
     platforms = platforms.linux;
     maintainers = with maintainers; [ shitikovkirill ];
   };
