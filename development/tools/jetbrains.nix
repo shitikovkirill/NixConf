@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  script = import ./reset-jetbrains.nix {writeShellScriptBin=writeShellScriptBin;};
+  script = import ./reset-jetbrains.nix {writeShellScriptBin=pkgs.writeShellScriptBin;};
 in {
   environment.systemPackages = with pkgs; [
     jetbrains.pycharm-professional
