@@ -8,13 +8,12 @@ let
     writeShellScriptBin "reset-${name}" ''
       echo "Removing evaluation key for ${name}"
       rm -rf ~/.config/JetBrains/${name}*/eval
-      rm -rf ~/.java/.userPrefs/jetbrains/${lib.strings.toLower name}
 
       echo "Resetting evalsprt in options.xml for ${name}"
       sed -i '/evlsprt/d' ~/.config/JetBrains/${name}*/options/other.xml
 
-      echo "Resetting evalsprt in prefs.xml"
-      sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
+      echo "Remove userPrefs"
+      rm -rf ~/.java/.userPrefs
 
       echo "Change date file for ${name}"
       find ~/.config/JetBrains/${name}* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
