@@ -9,8 +9,8 @@
     ./nix
     ./h
     ./docker.nix
-    ./python
-    ./go.nix
+    # ./python
+    # ./go.nix
     ./database
     ./electronics.nix
     ./bash.nix
