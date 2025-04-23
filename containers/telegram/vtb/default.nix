@@ -16,7 +16,7 @@ in {
     domain = "vtb.webwave.work";
     environment = {
       ENV = "dev";
-      API_TOKEN = "7627522924:AAHeNNp1iiYxITVK3VpRzdnl3R18Asa5584";
+      API_TOKEN = "...";
       WEBHOOK_HOST = "vtb.webwave.work";
       WEBHOOK_SSL_CERT = "/var/lib/videotb/fullchain.pem";
     };
