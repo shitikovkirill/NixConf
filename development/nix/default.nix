@@ -18,7 +18,6 @@ in {
     nix-index
     nixfmt-classic
     nix-prefetch-git
-    nixFlakes
     containersRm
   ];
 

@@ -1,9 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  sound.enable = true;
-  hardware.pulseaudio = {
+  services.pipewire = {
     enable = true;
-    zeroconf.discovery.enable = true;
+    audio.enable = true;
   };
 }

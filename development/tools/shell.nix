@@ -4,7 +4,8 @@ let
   appName = "JetBrainsResetTrail";
   description = "Reset IDE";
 
-  script = import ./reset-jetbrains.nix {writeShellScriptBin=writeShellScriptBin;};
+  script =
+    import ./reset-jetbrains.nix { writeShellScriptBin = writeShellScriptBin; };
 
 in mkShell rec {
   name = appName;
