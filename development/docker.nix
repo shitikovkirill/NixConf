@@ -25,6 +25,7 @@
   environment.shellAliases = {
     drmc = "docker rm $(docker ps -a -q)";
     drimage = "docker rmi $(docker images -q)";
+    drdimage = "docker rmi $(docker images --filter 'dangling=true' -q --no-trunc)";
     drvolume = "docker volume rm $(docker volume ls -q --filter dangling=true)";
     drnetwork = "docker network prune";
     dclearall = "docker system prune -a -f";
